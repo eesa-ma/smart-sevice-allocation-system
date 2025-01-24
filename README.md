@@ -1,0 +1,2 @@
+# smart sevice allocation system
+ A location-based service management system designed to streamline the assignment of service requests to technicians. The system enables users to submit service requests, track whether their request is assigned, and provide feedback after task completion. Admins can manage technicians, assign tasks based on availability and location, and ensure efficient service delivery. Technicians can mark their attendance, view assigned tasks, and update task status.
