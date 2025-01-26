@@ -21,28 +21,28 @@
                 </tr>      
                 <tr>
                     <td><label for="user-name">Name:</label></td>
-                    <td><input type="text" name="user-name" id="user-name" placeholder="john"></td>
+                    <td><input type="text" name="user-name" id="user-name" placeholder="john" required></td>
                 </tr>
                 <tr>
                     <td><label for="user-email">Email ID:</label></td>
-                    <td><input type="email" name="user-email" id="user-email" placeholder="john@gmail.com"></td>
+                    <td><input type="email" name="user-email" id="user-email" placeholder="john@gmail.com" required></td>
                 </tr>
                 <tr>
                     <td><label for="user-phone">Phone no:</label></td>
-                    <td><input type="tel" name="user-phone" id="user-phone" placeholder="123-456-7890"></td>
+                    <td><input type="tel" name="user-phone" id="user-phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></td>
                 </tr>
                 <tr>
                     <td rowspan="4"><label for="user-location">Location:</label></td>
-                    <td><input type="text" name="user-location" id="user-location" placeholder="house no and house name"></td>
+                    <td><input type="text" name="user-location" id="user-location" placeholder="house no and house name" required></td>
                 </tr>
                 <tr>
-                    <td><input type="text" id="user-location" name="user-location" placeholder="street name"></td>
+                    <td><input type="text" id="user-location" name="user-location" placeholder="street name" required></td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="user-location" id="user-location" placeholder="city name"></td>
+                    <td><input type="text" name="user-location" id="user-location" placeholder="city name" required></td>
                 </tr>
                 <tr>
-                    <td><input type="number" name="user-location" id="user-location" placeholder="postal code"></td>
+                    <td><input type="number" name="user-location" id="user-location" placeholder="postal code" required></td>
                 </tr>
                 <tr>
                     <td colspan="2"><center><input type="submit" value="Create account" id="submit" name="submit"></center></td>
