@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>landingpage</title>
     <link rel="stylesheet" href="/public/css/submit-button.css">
-    
+    <link rel="stylesheet" href="/public/css/global.css">
+    <link rel="stylesheet" href="/public/css/index.css">
 </head>
 <body>
     <!-- Navigation Bar -->
      <header>
         <nav>
-            <div class="logo">Smart Service</div>
+            <div class="logo"><img src="/public/images/logo.png" alt="logo" width="250px"></div>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -24,27 +25,39 @@
 
      <!-- hero section -->
      <section id="home" class="hero">
-        <h1>Smart Service Solutions at Your Fingertips!</h1>
-        <p>Easily request and track services, with skilled technicians assigned at your location.</p>
-        <!-- add image of technician assisting customer -->
-        <a href="/user/main.html" id="submit">Get Started</a>
+        <div id="hero-text">
+            <h1>Smart Service Solutions at Your Fingertips!</h1>
+            <p>Easily request and track services, with skilled technicians assigned at your location.</p>
+            <!-- add image of technician assisting customer -->
+            <a href="/user/main.html" id="submit"  >Get Started</a>
+        </div>
+        <div>
+            <img src="/public/images/technician.png" alt="technician">
+        </div>
      </section>
-
+     
      <!-- About Section -->
-    <section id="about">
+    <section id="about-section">
         <h2>About Our System</h2>
-        <p>Managing service requests efficiently is crucial for any service-based business. Our Smart Service Allocation System simplifies this process by seamlessly connecting customers with skilled technicians based on their location. Whether it's home maintenance, appliance repair, or technical support, our system ensures fast and reliable service with just a few clicks</p>
+        <div id="about">
+            <p>Managing service requests efficiently is crucial for any service-based business. Our Smart Service Allocation System simplifies this process by seamlessly connecting customers with skilled technicians based on their location. Whether it's home maintenance, appliance repair, or technical support, our system ensures fast and reliable service with just a few clicks</p>
+            <img src="/public/images/about-img.webp" alt="">
+        </div>
         <h3>How It Works</h3>
-        <p>1️. Users submit a service request by entering their location and issue details</p>
-        <p>2️⃣ Admins review the requests and assign a suitable technician based on location and availabipty.</p>
-        <p>3️⃣ Technicians receive assignments and update their status upon task completion.</p>
-        <p>4️⃣ Users can track request status in real time.</p>
+        <div id="works">
+            <p>1️ Users submit a service request by entering their location and issue details</p>
+            <p>2️⃣ Admins review the requests and assign a suitable technician based on location and availabipty.</p>
+            <p>3️⃣ Technicians receive assignments and update their status upon task completion.</p>
+            <p>4️⃣ Users can track request status in real time.</p>
+        </div>
         <h3>Key Features</h3>
-        <p>✔ Quick Service Requests – Submit service requests easily through a simple interface.</p>
-        <p>✔ Location-based Assignments – Technicians are assigned based on proximity for faster response.</p>
-        <p>✔ Real-time Tracking – Users can check whether their request has been assigned.</p>
-        <p>✔ Technician Availability Management – Technicians can mark themselves as Available/Unavailable.</p>
-        <p> Our system streamlines service management, ensuring faster resolutions and better service experiences! </p>
+        <div id="features">
+            <p>✔ Quick Service Requests – Submit service requests easily through a simple interface.</p>
+            <p>✔ Location-based Assignments – Technicians are assigned based on proximity for faster response.</p>
+            <p>✔ Real-time Tracking – Users can check whether their request has been assigned.</p>
+            <p>✔ Technician Availability Management – Technicians can mark themselves as Available/Unavailable.</p>
+            <!-- <p> Our system streamlines service management, ensuring faster resolutions and better service experiences! </p> -->
+        </div>
     </section>
 
     <section id="services">
@@ -74,28 +87,5 @@
         <p>&copy; 2025 Smart Service Allocation System</p>
     </footer>
 
-    <style>
-        header {
-          padding: 10px 20px;
-        }
-        nav  {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-        #submit {
-            text-decoration: none;
-        }
-        form input, form textarea {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        }
-    </style>
 </body>
 </html>

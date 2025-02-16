@@ -1,16 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+} */
+
+body {
+    overflow-x: hidden; /* Hides vertical scrolling */
 }
+
+
 
 html {
     font-family: 'Nunito', sans-serif;
 }
 
-body {
+/* body {
     background-color: rgb(240, 240, 240);
-}
+} */
 
