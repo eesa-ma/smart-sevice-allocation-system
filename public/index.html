@@ -13,18 +13,28 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-     <header>
+    <header>
         <nav>
-            <div class="logo"><img src="/public/images/logo.png" alt="logo" width="250px"></div>
+            <div class="logo">
+                <img src="/public/images/logo.png" alt="logo" width="250px">
+            </div>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Service</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="/public/login.html">Login</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-section">About</a></li>
+                <li><a href="#services">Service</a></li>
+                <!-- <li><a href="#">Contact</a></li> -->
+                <li class="dropdown">
+                    <a href="#">Login ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/user/signin.html">User</a></li>
+                        <li><a href="/admin/signin.html">Admin</a></li>
+                        <li><a href="/technician/signin.html">Technician</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
-     </header>
+    </header>
+    
 
      <!-- hero section -->
      <section id="home" class="hero">
@@ -77,7 +87,7 @@
                 <h3> Device Installation & Setup</h3>
                 <p>Need help installing a new smart TV, home theater, or kitchen appliance? Our technicians ensure a hassle-free setup.</p>
             </div>
-            <img src="/public/images/electronicrepair.png" alt="technician">
+            <img src="/public/images/deviceinstall.png" alt="technician">
         </div>
 
         <div >
@@ -85,7 +95,7 @@
                 <h3>Technical Troubleshooting</h3>
                 <p>Get support for software and hardware issues in your electronic devices, from slow performance to connectivity problems.</p>
             </div>
-            <img src="/public/images/electronicrepair.png" alt="technician">
+            <img src="/public/images/troubleshoot.png" alt="technician">
         </div>
     </section> 
 
@@ -104,7 +114,7 @@
     <section id="direct-user-login">
         <p>Having a problem?</p>
         <p>We'll fixed today!</p>
-        <a href="/user/main.html" id="submit"  >Get Started</a>
+        <a href="/user/signin.html" id="submit"  >Get Started</a>
     </section>
 
      <!-- Footer -->
