@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technician Dashboard</title>
+<style>
+body {
+background-color: rgb(248, 249, 250);
+ }
+.sidebar {
+     height: 100vh;
+     width: 250px;
+     position: fixed;
+     background-color: rgb(52, 58, 64);
+     padding-top: 20px;
+     color: white;
+ }
+.sidebar a {
+     padding: 10px;
+     display: block;
+     color: white;
+     text-decoration: none;
+ }
+.sidebar a:hover {
+     background-color: rgb(73, 80, 87);
+ }
+.content {
+     margin-left: 260px;
+     padding: 20px;
+ }
+.card {
+     background-color: white;
+     border-radius: 8px;
+     padding: 20px;
+     margin: 10px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     flex: 1;
+     text-align: center;
+ }
+.card h5 {
+     margin-bottom: 10px;
+ }
+.card p {
+     font-size: 24px;
+     margin: 0;
+ }
+.card-container {
+     display: flex;
+     gap: 20px;
+ }
+.attendance-button {
+     background-color: rgb(23, 22, 22);
+     color: white;
+     padding: 10px 20px;
+     border: none;
+     border-radius: 5px;
+     box-shadow: 0 4px 6px rgba(233, 231, 231, 0.967);
+     cursor: pointer;
+     font-size: 16px;
+     margin-top: 20px;
+ }
+.attendance-button:hover {
+     background-color: rgb(252, 252, 252);
+ }
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h3 class="text-center">Technician Panel</h3>
+<a href="#">Dashboard</a>
+<a href="#">Assigned Tasks</a>
+<a href="#">Profile</a>
+<a href="#">Settings</a>
+</div>
+<div class="content">
+<h2>Welcome, Technician</h2>
+<div class="card-container">
+<div class="card">
+<h5>Assigned Tasks</h5>
+<p>10</p>
+</div>
+<div class="card">
+<h5>Completed Tasks</h5>
+<p>7</p>
+</div>
+</div>
+<button class="attendance-button">Mark Attendance</button>
+</div>
+</body>
+</html>
