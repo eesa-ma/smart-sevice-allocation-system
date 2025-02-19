@@ -3,7 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Request & Feedback</title>
+    <title>Service Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+    <script>
+        function redirectToFeedback() {
+            alert("Your service request has been submitted. You can provide feedback after completion.");
+            window.location.href = "feedback.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Service Request Form</h2>
+        <form id="serviceForm" onsubmit="event.preventDefault(); redirectToFeedback();">
+            <label for="serviceType">Type of Service:</label>
+            <select id="serviceType" name="serviceType" required>
+                <option value="">Select</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Plumbing">Plumbing</option>
+                <option value="Garden">Garden</option>
+                <option value="Device Installation">Device Installation</option>
+                <option value="Technical">Technical</option>
+                <option value="Repair">Repair</option>
+            </select>
+            
+            <label for="description">Service Description:</label>
+            <textarea id="description" name="description" required></textarea>
+            
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+            
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -48,46 +129,8 @@
 </head>
 <body>
     <div class="container">
-        <h2>Service Request Form</h2>
-        <form id="serviceForm">
-            <label for="requestID">Request ID:</label>
-            <input type="text" id="requestID" name="requestID" required>
-            
-            <label for="userID">User ID:</label>
-            <input type="text" id="userID" name="userID" required>
-
-            <label for="technicianID">Technician ID:</label>
-            <input type="text" id="technicianID" name="technicianID">
-
-            <label for="description">Service Description:</label>
-            <textarea id="description" name="description" required></textarea>
-            
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location" required>
-            
-            <label for="status">Status:</label>
-            <select id="status" name="status" required>
-                <option value="Pending">Pending</option>
-                <option value="In progress">In progress</option>
-                <option value="Completed">Completed</option>
-            </select>
-            
-            <button type="submit">Submit Request</button>
-        </form>
-    </div>
-
-    <div class="container">
         <h2>Feedback Form</h2>
         <form id="feedbackForm">
-            <label for="feedbackID">Feedback ID:</label>
-            <input type="text" id="feedbackID" name="feedbackID" required>
-            
-            <label for="serviceID">Service Request ID:</label>
-            <input type="text" id="serviceID" name="serviceID" required>
-
-            <label for="userID">User ID:</label>
-            <input type="text" id="userID" name="userID" required>
-
             <label for="rating">Rating (1-5):</label>
             <select id="rating" name="rating" required>
                 <option value="">Select</option>
