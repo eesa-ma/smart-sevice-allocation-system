@@ -5,112 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technician Dashboard</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body {
-            background-color: rgb(248, 249, 250);
-            height: 100vh;
-            display: flex;
-        }
-
-        .tech_dahboard {
-            display: flex;
-            width: 100vw;
-            height: 100vh;
-        }
-
-        .sidebar,
-        .techside {
-            width: 250px;
-            background-color: rgb(52, 58, 64);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
-        }
-
-        .sidebar {
-            flex-shrink: 0;
-        }
-
-        .sidebar a {
-            padding: 10px;
-            display: block;
-            color: white;
-            text-decoration: none;
-            width: 100%;
-            text-align: center;
-        }
-
-        .sidebar a:hover {
-            background-color: rgb(73, 80, 87);
-        }
-
-        .content {
-            flex: 1;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-        }
-
-        .card-container {
-            margin-top: 30px;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            flex: 1;
-            max-width: 200px;
-        }
-
-        .attendance-button {
-            background-color: rgb(23, 22, 22);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(233, 231, 231, 0.967);
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 20px;
-        }
-
-        .attendance-button:hover {
-            background-color: rgb(252, 252, 252);
-            color: black;
-        }
-
-        .techside {
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-    </style>
+    <link rel="stylesheet" href="/public/css/global.css">
+    <link rel="stylesheet" href="/technician/css/dashboard.css">
 </head>
 
 <body>
     <div class="tech_dahboard">
         <div class="sidebar">
-            <h3>Technician Panel</h3>
+            <h2>Technician Panel</h2>
             <a href="#">Dashboard</a>
             <a href="#">Assigned Tasks</a>
             <a href="#">Profile</a>
@@ -128,14 +30,17 @@
                     <p>7</p>
                 </div>
             </div>
-            <button class="attendance-button">Mark Attendance</button>
         </div>
         <div class="techside">
-            <p id="techname">EESA M A</p>
-            <p id="techid">@@$#</p>
-            
+            <h2>profile</h2> <br>
+            <i class="fa-regular fa-user"></i> <br>
+            <p id="techeid"> user id</p> <br>
+            <p id="techname" name="techname">EESA M A</p> 
+            <button class="attendance-button" name="techeattendance" id="techeattendance" onclick="markAttendance()">Unavailable</button>
         </div>
     </div>
+    <script src="https://kit.fontawesome.com/781c7c7d6c.js" crossorigin="anonymous"></script>
+    <script src="/technician/js/attendancebtn.js"></script>
 </body>
 
 </html>
