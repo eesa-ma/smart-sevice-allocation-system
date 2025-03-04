@@ -7,5 +7,37 @@
 </head>
 <body>
     <h1>TECHNICIAN LOGIN</h1>
+    <form action="https://formspree.io/f/your-email" method="post">
+        <table>
+            <tr>
+                <th colspan="2">SIGN IN/SIGN UP</th>
+            </tr>
+            <tr>
+                <td><label for="useremail">Email id:</label></td>
+                <td><input type="email" id="useremail" name="useremail" required></td>
+            </tr>
+            <tr>
+                <td><label for="userpassword">Password:</label></td>
+                <td><input type="password" id="userpassword" name="userpassword"></td>
+            </tr>
+            <tr>
+                <td colspan="2" id="saveinfo"><input type="checkbox" id="userlogincheck" name="userlogincheck">&nbsp<label for="userlogincheck">Save login info</label></td>
+            </tr>
+            <tr> 
+                <td><p id="loginerror" name="loginerror"></p></td> <!--for displaying error message -->
+            </tr>
+            <tr>
+            <td colspan="2">
+                <center><input type="submit" value="Sign In" id="submit"></center>
+            </td>
+            </tr>
+            <tr>
+               <td colspan="2"><center><a href="/user/passreset.html" >Forgotten your password?</a></center></td> 
+            </tr>
+            <tr>
+                <td colspan="2"><center><a href="/user/account.html">Don't have an account?</a></center></td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>
