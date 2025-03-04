@@ -1,0 +1,21 @@
+body {
+    overflow-y: hidden;
+}
+
+.div-container {
+    /* border: solid 1px black; */
+    text-align: center;
+    margin: 10% 30%;
+    padding: 5%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
+    .fa-user-lock {
+        font-size: 100px; 
+        color: #333; 
+    }
+    p {
+        font-size: larger ;
+    }
+    #submit {
+        padding: 10px 50px; 
+    }
+}

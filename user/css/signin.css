@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(240, 240, 240);
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,19 +34,21 @@ h1 {
 #loginerror {
     color: #DC3545;
 }
-/* #submit {
-    width: 100%;
+
+
+#submit {
+    width: 50%;
     padding: 10px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-} */
+}
 
-/* #submit:hover {
-    background-color: #0d0f13;
-} */
+
+
+
 
 a {
     display: block;
