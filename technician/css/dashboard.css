@@ -1,0 +1,97 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(248, 249, 250);
+    height: 100vh;
+    display: flex;
+}
+
+.tech_dahboard {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.sidebar,
+.techside {
+    width: 250px;
+    background-color: rgb(52, 58, 64);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.sidebar {
+    flex-shrink: 0;
+}
+
+.sidebar a {
+    padding: 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background-color: rgb(73, 80, 87);
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.card-container {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    max-width: 200px;
+}
+
+.attendance-button {
+    background-color: rgb(237, 1, 1);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.techside {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fa-user{
+    font-size: 100px; 
+    color: #fff; 
+}
