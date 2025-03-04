@@ -1,20 +1,10 @@
 body {
-    background-color: rgb(240, 240, 240);
+    
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
-/* form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-    line-height: 2rem;
-} */
 
 h1 {
     text-align: center;
@@ -22,31 +12,22 @@ h1 {
 
 }
 
-/* input {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-} */
 #saveinfo {
     text-align: left;
 }
 #loginerror {
     color: #DC3545;
 }
-/* #submit {
-    width: 100%;
+
+#submit {
+    width: 50%;
     padding: 10px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-} */
-
-/* #submit:hover {
-    background-color: #0d0f13;
-} */
+}
 
 a {
     display: block;
