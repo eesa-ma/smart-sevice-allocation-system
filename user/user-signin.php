@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign-in</title>
-    <link rel="stylesheet" href="/public/css/global.css">
-    <link rel="stylesheet" href="/user/css/signin.css">
-    <link rel="stylesheet" href="/public/css/form.css">
-    <link rel="stylesheet" href="/public/css/submit-button.css">
+    <link rel="stylesheet" href="../public/css/global.css">
+    <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="../public/css/form.css">
+    <link rel="stylesheet" href="../public/css/submit-button.css">
 </head>
 <body>
     <header>
@@ -38,10 +38,10 @@
             </td>
             </tr>
             <tr>
-               <td colspan="2"><center><a href="/user/verify.html" >Forgotten your password?</a></center></td> 
+               <td colspan="2"><center><a href="../user/user-verify.php" >Forgotten your password?</a></center></td> 
             </tr>
             <tr>
-                <td colspan="2"><center><a href="/user/account.html">Don't have an account?</a></center></td>
+                <td colspan="2"><center><a href="../user/user-account.php">Don't have an account?</a></center></td>
             </tr>
         </table>
     </form>
