@@ -1,3 +1,40 @@
+<?php
+    session_start();
+    include '../includes/db.php';
+
+    if(isset($_POST["submit"])) {
+        $email = $_POST["useremail"];
+        $password = $_POST["userpassword"];
+
+
+        //fetching user from data base
+        $sql = "SELECT * FROM user WHERE Email = '$email'";
+        $result = mysqli_query($conn, $sql);
+
+        if ($row = mysqli_fetch_assoc($result)) {
+            //verfiying hashed password
+            // $hashed_password = $row["Password"];
+            // if (password_verify($password, $hashed_password))
+            if($password == $row["Password"]) {
+                // Store user data in session
+                $_SESSION["userid"] = $row["user-ID"];
+                $_SESSION["username"] = $row["Name"];
+                $_SESSION["useremail"] = $row["Email"];
+    
+                // Redirect to user dashboard
+                header("Location: user-dash.php");
+                exit();
+            } else {
+                echo "<script>alert('Incorrect password!'); window.location.href='user-signin.php';</script>";
+            }
+        } else {
+            echo "<script>alert('User not found! Please sign up first.'); window.location.href='user-account.php';</script>";
+        }
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +50,7 @@
     <header>
         <h1>SMART SERVICE ALLOCATION SYSTEM</h1>
     </header>
-    <form action="https://formspree.io/f/your-email" method="post">
+    <form action="user-signin.php" method="post">
         <table>
             <tr>
                 <th colspan="2">SIGN IN/SIGN UP</th>
@@ -34,7 +71,7 @@
             </tr>
             <tr>
             <td colspan="2">
-                <center><input type="submit" value="Sign In" id="submit"></center>
+                <center><input type="submit" value="Sign In" id="submit" name="submit"></center>
             </td>
             </tr>
             <tr>

@@ -1,5 +1,33 @@
 <?php
 include '../includes/db.php';
+
+if(isset($_POST["submit"])) {
+    $name = $_POST["user-name"];
+    $email = $_POST["user-email"];
+    $phoneno = $_POST["user-phone"];
+    $address = $_POST["user-location"];
+    $password = $_POST["user-password"];
+    $confirmpassword = $_POST["confirm-password"];
+
+    if ($password !== $confirmpassword) {
+        $error = "Passwords do not match.";
+    } else {
+        // Hash password
+        // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        // Insert into database
+        $sql = "INSERT INTO user (Name, Email, Phone_No,Address, Password) 
+                VALUES ('$name', '$email', '$phoneno', '$address', '$password')";
+
+        if (mysqli_query($conn, $sql)) {
+            echo "<script>alert('Account created successfully!'); window.location.href='user-signin.php';</script>";
+            exit();
+        } else {
+            $error = "Error: " . mysqli_error($conn);
+        }
+    }
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +46,7 @@ include '../includes/db.php';
         <h1>Smart Service Allocation System</h1>
     </header>
     <main class="create-form">
-        <form action="https://formspree.io/f/your-email" method="post">
+        <form action="user-account.php" method="post">
             <table>
                 <tr>
                     <th colspan="2">Create Account</th>
@@ -33,7 +61,7 @@ include '../includes/db.php';
                 </tr>
                 <tr>
                     <td><label for="user-phone">Phone no:</label></td>
-                    <td><input type="tel" name="user-phone" id="user-phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></td>
+                    <td><input type="tel" name="user-phone" id="user-phone" placeholder="123-456-7890" pattern="[0-9]{10}" required></td>
                 </tr>
                 <tr>
                     <td rowspan="4"><label for="user-location">Location:</label></td>
@@ -60,7 +88,7 @@ include '../includes/db.php';
                     <td colspan="2"><center><input type="submit" value="Create account" id="submit" name="submit"></center></td>
                 </tr>
                 <tr>
-                    <td colspan="2">Have an account already? <a href="/user/signin.html">Login</a></td>
+                    <td colspan="2">Have an account already? <a href="../user/user-signin.php">Login</a></td>
                 </tr>
             </table>
         </form>

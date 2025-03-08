@@ -112,7 +112,7 @@
     <section id="direct-user-login">
         <p>Having a problem?</p>
         <p>We'll fixed today!</p>
-        <a href="/user/signin.html" id="submit"  >Get Started</a>
+        <a href="../user/user-signin.php" id="submit"  >Get Started</a>
     </section>
 
      <!-- Footer -->
