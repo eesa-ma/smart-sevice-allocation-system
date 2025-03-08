@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,9 +24,8 @@
     </div>
 
     <div class="main-content">
-        <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
         <div class="topbar">
-            Welcome, User
+        Welcome, <?php echo isset($_SESSION["username"]) ? $_SESSION["username"] : "User"; ?>
         </div>
         
         <div class="cards">
