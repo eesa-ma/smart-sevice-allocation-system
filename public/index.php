@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>landingpage</title>
-    <link rel="stylesheet" href="/public/css/submit-button.css">
-    <link rel="stylesheet" href="/public/css/global.css">
+    <link rel="stylesheet" href="css/submit-button.css">
+    <link rel="stylesheet" href="css/global.css">
 
-    <link rel="stylesheet" href="/public/css/index.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <header>
         <nav>
             <div class="logo">
-               <a href="#home"><img src="/public/images/logo.png" alt="logo" width="250px"></a> 
+               <a href="#home"><img src="images/logo.png" alt="logo" width="250px"></a> 
             </div>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -42,7 +42,7 @@
             <!-- add image of technician assisting customer -->
         </div>
         <div>
-            <img src="/public/images/technician.png" alt="technician">
+            <img src="images/technician.png" alt="technician">
         </div>
      </section>
      
@@ -51,7 +51,7 @@
         <h2>About Our System</h2>
         <div id="about">
             <p>Managing service requests efficiently is crucial for any service-based business. Our Smart Service Allocation System simplifies this process by seamlessly connecting customers with skilled technicians based on their location. Whether it's home maintenance, appliance repair, or technical support, our system ensures fast and reliable service with just a few clicks</p>
-            <img src="/public/images/about-img.webp" alt="">
+            <img src="images/about-img.webp" alt="">
         </div>
         <h3>How It Works</h3>
         <div id="works">
@@ -77,7 +77,7 @@
                 <h3>Electronics Repair</h3>
                 <p> Get expert repair services for TVs, laptops, smartphones, and home appliances like refrigerators and washing machines.</p>
             </div>
-            <img src="/public/images/electronicrepair.png" alt="technician">
+            <img src="images/electronicrepair.png" alt="technician">
         </div>
 
         <div >
@@ -85,7 +85,7 @@
                 <h3> Device Installation & Setup</h3>
                 <p>Need help installing a new smart TV, home theater, or kitchen appliance? Our technicians ensure a hassle-free setup.</p>
             </div>
-            <img src="/public/images/deviceinstall.png" alt="technician">
+            <img src="images/deviceinstall.png" alt="technician">
         </div>
 
         <div >
@@ -93,7 +93,7 @@
                 <h3>Technical Troubleshooting</h3>
                 <p>Get support for software and hardware issues in your electronic devices, from slow performance to connectivity problems.</p>
             </div>
-            <img src="/public/images/troubleshoot.png" alt="technician">
+            <img src="images/troubleshoot.png" alt="technician">
         </div>
     </section> 
 
