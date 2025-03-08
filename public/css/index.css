@@ -1,30 +1,4 @@
-/* .rubik {
-    font-family: "Rubik", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-}
-*{
-    font-family: "Rubik";
-}
-*/
-/* header { 
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  background: white;
-}
 
-nav  {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-} */
 
 /* Ensure the header sticks to the top */
 header {
@@ -170,7 +144,7 @@ nav ul li a:hover {
     }
     #works {
         display: flex;
-        gap: 10px;
+        gap: 50px;
         p {
             font-weight: bold;
             background:  #C2C7C6;
@@ -184,7 +158,7 @@ nav ul li a:hover {
     }
     #features {
         display: flex;
-        gap: 10px;
+        gap: 50px;
         p {
             font-weight: bold;
             background:  #C2C7C6;
