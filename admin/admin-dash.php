@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+    if(isset($_POST["logout"])) {
+        session_destroy();
+        header("Location: admin-login.php");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,7 +91,10 @@
             <li><a href="#">Reports</a></li>
             <li><a href="#">Settings</a></li>
         </ul>
-        <div class="logout">Logout</div>
+        <form action="admin-dash.php" method="POST">
+            <button class="logout" name="logout">Logout</button>
+        </form>
+       
     </div>
 
     <div class="main-content" id="home">
