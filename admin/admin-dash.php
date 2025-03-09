@@ -1,10 +1,5 @@
 <?php 
     session_start();
-    if(isset($_POST["logout"])) {
-        session_destroy();
-        header("Location: admin-login.php");
-        exit();
-    }
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +86,7 @@
             <li><a href="#">Reports</a></li>
             <li><a href="#">Settings</a></li>
         </ul>
-        <form action="admin-dash.php" method="POST">
+        <form action="../includes/logout.php" method="POST">
             <button class="logout" name="logout">Logout</button>
         </form>
        
