@@ -1,5 +1,27 @@
 <?php 
     session_start();
+    include '../includes/db.php';
+    if(isset($_POST["submit"])) {
+        $password = $_POST["new-password"];
+        $confirmpassword = $_POST["confirm-password"];
+
+        if (empty($_POST["new-password"]) || empty($_POST["confirm-password"])){
+            echo "<script>alert('Please fill in all fields.')</script>;";
+        }
+        elseif ($password !== $confirmpassword) {
+            echo "<script>alert('Passwords do not match.');</script>";    
+        } else { 
+            $admin_id = $_SESSION["Admin_ID"];
+            $sql = "UPDATE admin SET password = '$password' WHERE Admin_ID = '$admin_id'";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script>alert('Password updated successfully!');window.location.href='../admin/admin-login.php';</script>";
+            } else {
+                echo "<script>alert('Error updating password.');</script>";
+            }
+        }
+       
+    }
 ?>
 
 <!DOCTYPE html>
@@ -12,10 +34,10 @@
     <link rel="stylesheet" href="../public/css/form.css">
     <link rel="stylesheet" href="../public/css/submit-button.css">
     <link rel="stylesheet" href="../admin/css/passreset.css">
-</head>5
+</head>
 <body>
     <div class="div-container">
-    <form action="https://formspree.io/f/your-email">
+    <form action="admin-pass-reset.php" method="POST">
         <table>
             <tr>
                 <th colspan="2">Reset Password</th>

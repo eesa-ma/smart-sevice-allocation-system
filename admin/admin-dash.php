@@ -82,7 +82,7 @@
         <ul>
             <li><a href="#home">Dashboard</a></li>
          
-            <li><a href="/admin/service-manage.html">Manage Services</a></li>
+            <li><a href="../admin/service-manage.php">Manage Services</a></li>
             <li><a href="#">Reports</a></li>
             <li><a href="#">Settings</a></li>
         </ul>

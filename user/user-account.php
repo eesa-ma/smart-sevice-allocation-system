@@ -10,7 +10,7 @@ if(isset($_POST["submit"])) {
     $confirmpassword = $_POST["confirm-password"];
 
     if ($password !== $confirmpassword) {
-        $error = "Passwords do not match.";
+        echo "<script>alert('Passwords do not match.');</script>";
     } else {
         // Hash password
         // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
