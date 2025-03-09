@@ -1,14 +1,18 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset Password</title>
-    <link rel="stylesheet" href="/public/css/global.css">
-    <link rel="stylesheet" href="/public/css/form.css">
-    <link rel="stylesheet" href="/public/css/submit-button.css">
-    <link rel="stylesheet" href="/user/css/passreset.css">
-</head>
+    <link rel="stylesheet" href="../public/css/global.css">
+    <link rel="stylesheet" href="../public/css/form.css">
+    <link rel="stylesheet" href="../public/css/submit-button.css">
+    <link rel="stylesheet" href="../admin/css/passreset.css">
+</head>5
 <body>
     <div class="div-container">
     <form action="https://formspree.io/f/your-email">

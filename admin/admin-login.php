@@ -6,15 +6,13 @@
         $adminid = $_POST["admin-id"];
         $password = $_POST["admin-pass"];
 
-        //fetching users data
         $sql = "SELECT * FROM admin WHERE Admin_ID = '$adminid'";
         $result = mysqli_query($conn,$sql);
 
         if($row = mysqli_fetch_assoc($result)) {
             if($password == $row["password"]) {
                 $_SESSION["Admin_ID"] = $row["Admin_ID"];
-                $_SESSION["password"] = $row["password"];
-
+                
                 header("Location: admin-dash.php");
                 exit();
             } else {
@@ -56,7 +54,7 @@
                     <td><input type="password" name="admin-pass" id="admin-pass"  required></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><center><a href="/admin/verify-admin.html" >Forgotten your password?</a></center></td>
+                    <td colspan="2"><center><a href="../admin/verify-admin.php" >Forgotten your password?</a></center></td>
                 </tr>
                 <tr>
                     <td colspan="2"><center><input type="submit" value="LOGIN" id="submit" name="submit"></center></td>

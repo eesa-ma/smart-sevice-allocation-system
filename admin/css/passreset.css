@@ -1,0 +1,10 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:  150px;
+}
+
+.div-container {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
+}
