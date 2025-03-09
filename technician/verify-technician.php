@@ -1,13 +1,17 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verify-technician</title>
-    <link rel="stylesheet" href="/public/css/global.css">
-    <link rel="stylesheet" href="/public/css/submit-button.css">
-    <link rel="stylesheet" href="/technician/css/verify.css">
-    <link rel="stylesheet" href="/public/css/form.css">
+    <link rel="stylesheet" href="../public/css/global.css">
+    <link rel="stylesheet" href="../public/css/submit-button.css">
+    <link rel="stylesheet" href="../technician/css/verify.css">
+    <link rel="stylesheet" href="../public/css/form.css">
 </head>
 <body>
     <div class="div-container" style="background-color: white;">

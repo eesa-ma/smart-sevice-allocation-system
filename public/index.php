@@ -26,7 +26,7 @@
                     <ul class="dropdown-menu">
                     <li><a href="../user/user-signin.php">User</a></li>
                         <li><a href="../admin/admin-login.php">Admin</a></li>
-                        <li><a href="/technician/techinician_login.html">Technician</a></li>
+                        <li><a href="../technician/technician_login.php">Technician</a></li>
                     </ul>
                 </li>
             </ul>
