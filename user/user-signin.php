@@ -60,7 +60,7 @@
                 <td><input type="password" id="userpassword" name="userpassword"></td>
             </tr>
             <tr>
-                <td colspan="2" id="saveinfo"><input type="checkbox" id="userlogincheck" name="userlogincheck">&nbsp<label for="userlogincheck">Save login info</label></td>
+                <!-- <td colspan="2" id="saveinfo"><input type="checkbox" id="userlogincheck" name="userlogincheck">&nbsp<label for="userlogincheck">Save login info</label></td> -->
             </tr>
             <tr> 
                 <td><p id="loginerror" name="loginerror"></p></td> <!--for displaying error message -->

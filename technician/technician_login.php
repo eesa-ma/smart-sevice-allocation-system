@@ -18,8 +18,10 @@
                 header("Location: technician-dashboard.php");
                 exit();
             } else {
-                echo "<script>alert('Incorrect password!'); window.location.href='user-signin.php';</script>";
+                echo "<script>alert('Incorrect password!'); window.location.href='technician_login.php';</script>";
             }
+        } else {
+            echo "<script>alert('Technician not found!'); window.location.href='technician_login.php';</script>";
         }
     }
 ?>
@@ -51,7 +53,7 @@
                 <td><input type="password" id="techhpassword" name="techpassword"></td>
             </tr>
             <tr>
-                <td colspan="2" id="savetechinfo"><input type="checkbox" id="techlogincheck" name="techlogincheck">&nbsp<label for="techlogincheck">Save login info</label></td>
+                <!-- <td colspan="2" id="savetechinfo"><input type="checkbox" id="techlogincheck" name="techlogincheck">&nbsp<label for="techlogincheck">Save login info</label></td> -->
             </tr>
             <tr> 
                 <td><p id="techloginerror" name="techloginerror"></p></td> <!--for displaying error message -->
