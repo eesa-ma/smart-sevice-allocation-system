@@ -14,7 +14,11 @@
                 $_SESSION["technicianid"] = $row["Techinician_ID"];
                 $_SESSION["name"] = $row["Name"];
                 $_SESSION["technicianemail"] = $row["Email"];
-                
+
+                header("Location: technician-dashboard.php");
+                exit();
+            } else {
+                echo "<script>alert('Incorrect password!'); window.location.href='user-signin.php';</script>";
             }
         }
     }
