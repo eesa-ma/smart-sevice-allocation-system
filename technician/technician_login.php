@@ -11,7 +11,10 @@
 
         if($row = mysqli_fetch_assoc($result)) {
             if($password == $row["Password"]) {
-                $_SESSION
+                $_SESSION["technicianid"] = $row["Techinician_ID"];
+                $_SESSION["name"] = $row["Name"];
+                $_SESSION["technicianemail"] = $row["Email"];
+                
             }
         }
     }
