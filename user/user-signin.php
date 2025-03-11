@@ -7,21 +7,17 @@
         $password = $_POST["userpassword"];
 
 
-        //fetching user from data base
+        
         $sql = "SELECT * FROM user WHERE Email = '$email'";
         $result = mysqli_query($conn, $sql);
 
         if ($row = mysqli_fetch_assoc($result)) {
-            //verfiying hashed password
-            // $hashed_password = $row["Password"];
-            // if (password_verify($password, $hashed_password))
             if($password == $row["Password"]) {
-                // Store user data in session
+               
                 $_SESSION["userid"] = $row["user-ID"];
                 $_SESSION["username"] = $row["Name"];
                 $_SESSION["useremail"] = $row["Email"];
     
-                // Redirect to user dashboard
                 header("Location: user-dash.php");
                 exit();
             } else {
