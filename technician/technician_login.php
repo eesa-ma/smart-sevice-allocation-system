@@ -3,14 +3,18 @@
     include '../includes/db.php';
 
     if(isset($_POST["submit"])) {
-        $techncianemail = $_POST["techemai"];
-        $password = $_POST["techpassowrd"];
+        $techncianemail = $_POST["techemail"]; // Corrected input name
+        $password = $_POST["techpassword"];   // Corrected input name
 
         $sql = "SELECT * FROM technician WHERE Email = '$techncianemail'";
-        $result = mysqli_query($conn,$sql);
+        $result = mysqli_query($conn, $sql);
 
-        if($row = mysqli_fetch_assoc($result)) {
-            if($password == $row["Password"]) {
+        if (!$result) {
+            die("Database query failed: " . mysqli_error($conn));
+        }
+
+        if ($row = mysqli_fetch_assoc($result)) {
+            if ($password === $row["Password"]) { // Direct password comparison (no hashing)
                 $_SESSION["technicianid"] = $row["Techinician_ID"];
                 $_SESSION["name"] = $row["Name"];
                 $_SESSION["technicianemail"] = $row["Email"];
@@ -25,6 +29,7 @@
         }
     }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

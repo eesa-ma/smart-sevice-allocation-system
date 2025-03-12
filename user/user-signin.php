@@ -14,12 +14,12 @@
         if ($row = mysqli_fetch_assoc($result)) {
             if($password == $row["Password"]) {
                
-                $_SESSION["userid"] = $row["user-ID"];
+                $_SESSION["userid"] = $row["user_ID"];
                 $_SESSION["username"] = $row["Name"];
                 $_SESSION["useremail"] = $row["Email"];
     
                 header("Location: user-dash.php");
-                exit();
+                //exit();
             } else {
                 echo "<script>alert('Incorrect password!'); window.location.href='user-signin.php';</script>";
             }

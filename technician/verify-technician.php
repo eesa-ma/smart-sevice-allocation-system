@@ -1,5 +1,26 @@
 <?php 
     session_start();
+    include '../includes/db.php';
+
+    if(isset($_POST["submit"])) {
+        $technicianemail = $_POST["techemail"];
+        
+        $sql = "SELECT * FROM technician WHERE Email = '$technicianemail'";
+        $result = mysqli_query($conn,$sql);
+
+        if($row = mysqli_fetch_assoc($result)) {
+            if($technicianemail == $row["Email"]) {
+                $_SESSION["technicianemail"] = $row["Email"];
+
+                echo "<script>alert('Verification done');window.location.href='techpassreset.php';</script>";
+                exit();
+            } else {
+                echo "<script>alert('Invalid credentials');window.location.href='technician_login.php';</script>";
+            }
+        } else {
+            echo "<script>alert('Invalid credentials');window.location.href='technician_login.php';</script>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +39,10 @@
         <i class="fa-solid fa-user-lock"></i>
         <p>Trouble with logging in?</p>
         <p>Enter your email address to verify your account</p>
-        <input type="email" id="techemail" name="user-email" required> <br> <br>
-       <a href="/technician/techpassreset.html"> <input type="submit" value="verify" id="submit"></a>
+        <form action="verify-technician.php" method="POST" style="all:unset">
+        <input type="email" id="techemail" name="techemail" required> <br> <br>
+        <input type="submit" value="verify" id="submit" name="submit">
+        </form>
     </div>
     <script src="https://kit.fontawesome.com/781c7c7d6c.js" crossorigin="anonymous"></script>
 </body>

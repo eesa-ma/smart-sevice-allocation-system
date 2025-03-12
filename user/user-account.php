@@ -5,7 +5,11 @@ if(isset($_POST["submit"])) {
     $name = $_POST["user-name"];
     $email = $_POST["user-email"];
     $phoneno = $_POST["user-phone"];
-    $address = $_POST["user-location"];
+    $house = $_POST["house"];
+    $street = $_POST["street"];
+    $city = $_POST["city"];
+    $pincode = $_POST["pincode"];
+    $address = $house . ", " . $street . ", " . $city . " - " . $pincode;
     $password = $_POST["user-password"];
     $confirmpassword = $_POST["confirm-password"];
 
@@ -65,17 +69,18 @@ if(isset($_POST["submit"])) {
                 </tr>
                 <tr>
                     <td rowspan="4"><label for="user-location">Location:</label></td>
-                    <td><input type="text" name="user-location" id="user-location" placeholder="house no and house name" required></td>
+                    <td><input type="text" name="house" id="house" placeholder="House no and house name" required></td>
                 </tr>
                 <tr>
-                    <td><input type="text" id="user-location" name="user-location" placeholder="street name" required></td>
+                    <td><input type="text" name="street" id="street" placeholder="Street name" required></td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="user-location" id="user-location" placeholder="city name" required></td>
+                    <td><input type="text" name="city" id="city" placeholder="City name" required></td>
                 </tr>
                 <tr>
-                    <td><input type="number" name="user-location" id="user-location" placeholder="postal code" required></td>
+                    <td><input type="number" name="pincode" id="pincode" placeholder="Postal code" required></td>
                 </tr>
+
                 <tr>
                     <td><label for="user-password">Password:</label></td>
                     <td><input type="password" name="user-password" id="user-password" placeholder="create a strong password" required></td>

@@ -11,11 +11,11 @@
         elseif ($password !== $confirmpassword) {
             echo "<script>alert('Passwords do not match.');</script>";    
         } else { 
-            $useremail =  $_SESSION["useremail"];
-            $sql = "UPDATE user SET password = '$password' WHERE Email = '$useremail'";
+            $technicianemail = $_SESSION["technicianemail"];
+            $sql = "UPDATE technician SET Password = '$password' WHERE Email = '$technicianemail'";
 
             if (mysqli_query($conn, $sql)) {
-                echo "<script>alert('Password updated successfully!');window.location.href='../user/user-signin.php';</script>";
+                echo "<script>alert('Password updated successfully!');window.location.href='../technician/technician_login.php';</script>";
             } else {
                 echo "<script>alert('Error updating password.');</script>";
             }
@@ -23,6 +23,7 @@
        
     }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,11 +34,10 @@
     <link rel="stylesheet" href="../public/css/global.css">
     <link rel="stylesheet" href="../public/css/form.css">
     <link rel="stylesheet" href="../public/css/submit-button.css">
-    <link rel="stylesheet" href="../user/css/passreset.css">
+    <link rel="stylesheet" href="../technician/css/passreset.css">
 </head>
 <body>
-    <div class="div-container">
-    <form action="user-passreset.php" method="POST">
+    <form action="techpassreset.php" method="POST">
         <table>
             <tr>
                 <th colspan="2">Reset Password</th>
@@ -55,6 +55,5 @@
             </tr>
         </table>
     </form>
-</div>
 </body>
 </html>

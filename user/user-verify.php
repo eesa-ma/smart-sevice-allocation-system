@@ -1,3 +1,29 @@
+<?php 
+    session_start();
+    include '../includes/db.php';
+
+    if(isset($_POST["submit"])) {
+        $useremail = $_POST["user-email"];
+        
+        $sql = "SELECT * FROM user WHERE Email = '$useremail'";
+        $result = mysqli_query($conn,$sql);
+
+        if($row = mysqli_fetch_assoc($result)) {
+            if($useremail == $row["Email"]) {
+                $_SESSION["useremail"] = $row["Email"];
+
+                echo "<script>alert('Verification done');window.location.href='user-passreset.php';</script>";
+                exit();
+            } else {
+                echo "<script>alert('Invalid credentials');window.location.href='user-signin.php';</script>";
+            }
+        } else {
+            echo "<script>alert('Invalid credentials');window.location.href='user-signin.php';</script>";
+        }
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +40,9 @@
         <i class="fa-solid fa-user-lock"></i>
         <p>Trouble with logging in?</p>
         <p>Enter your email address to verify your account</p>
+        <form action="user-verify.php" method="POST" style="all:unset">
         <input type="email" id="user-email" name="user-email" required> <br> <br>
-       <a href="../user/user-passreset.php"> <input type="submit" value="verify" id="submit"></a>
+        <input type="submit" value="verify" id="submit" name="submit">
     </div>
     <script src="https://kit.fontawesome.com/781c7c7d6c.js" crossorigin="anonymous"></script>
 </body>

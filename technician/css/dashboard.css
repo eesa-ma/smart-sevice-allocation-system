@@ -95,3 +95,16 @@ body {
     font-size: 100px; 
     color: #fff; 
 }
+
+.logout {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: red;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}

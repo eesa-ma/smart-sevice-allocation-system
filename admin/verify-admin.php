@@ -12,7 +12,6 @@
                 $_SESSION["Admin_ID"] = $row["Admin_ID"];
 
                 echo "<script>alert('Verification done');window.location.href='admin-pass-reset.php';</script>";
-                // header("Location: admin-pass-reset.php");
                 exit();
             } else {
                 echo "<script>alert('Invalid admin ID');window.location.href='admin-login.php';</script>";

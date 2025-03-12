@@ -34,11 +34,11 @@
         <div class="cards">
             <div class="card">
                 <h3>Total Orders</h3>
-                <p>4</p>
+                <p>0</p>
             </div>
             <div class="card">
                 <h3>Pending Orders</h3>
-                <p>2</p>
+                <p>0</p>
             </div>
         </div>
     </div>
