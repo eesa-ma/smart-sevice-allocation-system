@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    include '../includes/db.php';
 ?>
 
 <!DOCTYPE html>
@@ -65,88 +66,35 @@
             <tr>
                 <th>Request ID</th>
                 <th>Customer Name</th>
-                <th>Service Type</th>
+                <th>Service Description</th>
                 <th>Location</th>
-                <th>Technician</th>
                 <th>Status</th>
-                <th>Admin Comments</th>
                 <th>Action</th>
             </tr>
-            <tr>
-                <td>001</td>
-                <td>Ashir</td>
-                <td>Electrical</td>
-                <td>Kozhikode, Kerala</td>
-                <td>
-                    <select>
-                        <option value="">Assign Technician</option>
-                        <option value="Rajesh Kumar">Rajesh Kumar</option>
-                        <option value="Amit Sharma">Amit Sharma</option>
-                        <option value="Suresh Verma">Suresh Verma</option>
-                        <option value="Manoj Tiwari">Manoj Tiwari</option>
-                        <option value="Rahul Nair">Rahul Nair</option>
-                    </select>
-                </td>
-                <td>
-                    <select>
-                        <option value="Pending">Pending</option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
-                </td>
-                <td><textarea placeholder="Add comments"></textarea></td>
-                <td><button>Update</button></td>
-            </tr>
-            <tr>
-                <td>002</td>
-                <td>Eesa</td>
-                <td>Plumbing</td>
-                <td>Ernakulam, Kerala</td>
-                <td>
-                    <select>
-                        <option value="">Assign Technician</option>
-                        <option value="Rajesh Kumar">Rajesh Kumar</option>
-                        <option value="Amit Sharma">Amit Sharma</option>
-                        <option value="Suresh Verma">Suresh Verma</option>
-                        <option value="Manoj Tiwari">Manoj Tiwari</option>
-                        <option value="Rahul Nair">Rahul Nair</option>
-                    </select>
-                </td>
-                <td>
-                    <select>
-                        <option value="Pending">Pending</option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
-                </td>
-                <td><textarea placeholder="Add comments"></textarea></td>
-                <td><button>Update</button></td>
-            </tr>
-            <tr>
-                <td>003</td>
-                <td>Deva</td>
-                <td>Garden</td>
-                <td>Thiruvananthapuram, Kerala</td>
-                <td>
-                    <select>
-                        <option value="">Assign Technician</option>
-                        <option value="Rajesh Kumar">Rajesh Kumar</option>
-                        <option value="Amit Sharma">Amit Sharma</option>
-                        <option value="Suresh Verma">Suresh Verma</option>
-                        <option value="Manoj Tiwari">Manoj Tiwari</option>
-                        <option value="Rahul Nair">Rahul Nair</option>
-                    </select>
-                </td>
-                <td>
-                    <select>
-                        <option value="Pending">Pending</option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
-                </td>
-                <td><textarea placeholder="Add comments"></textarea></td>
-                <td><button>Update</button></td>
-            </tr>
+            <?php 
+                $query = "SELECT sr.Request_ID, u.name, sr.Description, sr.Location, sr.Status 
+                          FROM service_request sr 
+                          JOIN user u ON sr.User_ID = u.user_ID";
+
+                $result = mysqli_query($conn, $query);
+                
+                while($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>
+                        <td>{$row['Request_ID']}</td>
+                        <td>{$row['name']}</td>
+                        <td>{$row['Description']}</td>
+                        <td>{$row['Location']}</td>
+                        <td>
+                            <select>
+                                <option value='Pending' " . ($row['Status'] == 'Pending' ? 'selected' : '') . ">Pending</option>
+                                <option value='In Progress' " . ($row['Status'] == 'In Progress' ? 'selected' : '') . ">In Progress</option>
+                                <option value='Completed' " . ($row['Status'] == 'Completed' ? 'selected' : '') . ">Completed</option>
+                            </select>
+                        </td>
+                        <td><button>Update</button></td>
+                    </tr>";
+                }
+            ?>
         </table>
     </div>
 </body>
