@@ -66,6 +66,19 @@ text-decoration: none;
 .toggle-btn {
     display: none;
 }
+.logout {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: red;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     .sidebar {
         width: 0;

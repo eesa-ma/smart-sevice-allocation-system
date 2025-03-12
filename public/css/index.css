@@ -92,7 +92,7 @@ nav ul li a:hover {
 }
 
 .hero {
-    background-image: url(/public/images/hero-bg.webp);
+    background-image: url("../images/hero-bg.webp");
     display: flex;
 }
 

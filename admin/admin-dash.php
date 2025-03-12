@@ -1,9 +1,15 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/global.css">
     <title>Admin Dashboard</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -76,11 +82,14 @@
         <ul>
             <li><a href="#home">Dashboard</a></li>
          
-            <li><a href="/admin/service-manage.html">Manage Services</a></li>
-            <li><a href="#">Reports</a></li>
+            <li><a href="../admin/service-manage.php">Manage Services</a></li>
+            <li><a href="../admin/technician-create.php">Add Technician</a></li>
             <li><a href="#">Settings</a></li>
         </ul>
-        <div class="logout">Logout</div>
+        <form action="../includes/logout.php" method="POST">
+            <button class="logout" name="logout">Logout</button>
+        </form>
+       
     </div>
 
     <div class="main-content" id="home">

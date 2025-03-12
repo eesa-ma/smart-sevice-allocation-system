@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>track-service</title>
-    <link rel="stylesheet" href="/public/css/global.css">
-    <link rel="stylesheet" href="/user/css/track-service.css">
+    <link rel="stylesheet" href="../public/css/global.css">
+    <link rel="stylesheet" href="../user/css/track-service.css">
 </head>
 <body>
     <div class="container">

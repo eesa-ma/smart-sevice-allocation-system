@@ -1,3 +1,36 @@
+<?php 
+    session_start();
+    if (!isset($_SESSION["userid"])) {
+        echo "<script>alert('User not logged in. Please log in first.'); window.location.href='../user/user-signin.php';</script>";
+        exit();
+    }
+    include '../includes/db.php';
+
+    if(isset($_POST["submit"])) {
+        $servicetype = $_POST["serviceType"];
+        $description = $_POST["description"];
+        $location = $_POST["location"];
+        $mobileno = $_POST["mobile"];
+
+        if(isset($_SESSION["userid"])) {
+            $userID = $_SESSION["userid"];
+        }
+       
+        $sql = "INSERT INTO service_request (Description, Location, Status,User_ID) 
+                VALUES ('$description', '$location', 'Pending','$userID')";
+        $result = mysqli_query($conn, $sql);
+
+        if($result) {
+            echo "<script>
+                    alert('Your service request has been submitted successfully!');
+                    window.location.href = '../user/user-dash.php';
+                  </script>";
+        } else {
+            echo "Error: " . mysqli_error($conn);
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,26 +78,17 @@
             background: #218838;
         }
     </style>
-    <script>
-        function redirectToFeedback() {
-            alert("Your service request has been submitted. You can provide feedback after completion.");
-            window.location.href = "feedback.html";
-        }
-    </script>
 </head>
 <body>
     <div class="container">
         <h2>Service Request Form</h2>
-        <form id="serviceForm" onsubmit="event.preventDefault(); redirectToFeedback();">
+        <form action="user-request.php" method="POST" id="serviceForm">
             <label for="serviceType">Type of Service:</label>
             <select id="serviceType" name="serviceType" required>
                 <option value="">Select</option>
-                <option value="Electrical">Electrical</option>
-                <option value="Plumbing">Plumbing</option>
-                <option value="Garden">Garden</option>
-                <option value="Device Installation">Device Installation</option>
-                <option value="Technical">Technical</option>
-                <option value="Repair">Repair</option>
+                <option value="electronics-repair">Electronics repair</option>
+                <option value="device-installation">Device Installation & Setup</option>
+                <option value="technical-troubleshooting">Technical Troubleshooting</option>
             </select>
             
             <label for="description">Service Description:</label>
@@ -76,7 +100,7 @@
             <label for="mobile">Mobile Number:</label>
             <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number" required>
             
-            <button type="submit">Submit Request</button>
+            <button type="submit" id="submit" name="submit">Submit Request</button>
         </form>
     </div>
 </body>
