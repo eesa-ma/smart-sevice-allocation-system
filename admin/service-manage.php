@@ -1,6 +1,22 @@
 <?php 
     session_start();
     include '../includes/db.php';
+
+    if (isset($_POST['assign_technician'])) {
+        $request_id = $_POST['request_id'];
+        $technician_id = $_POST['technician_id'];
+
+        // Assign technician and update status to "In Progress"
+        $assignQuery = "UPDATE service_request 
+                        SET Techinician_ID = '$technician_id', Status = 'In Progress' 
+                        WHERE Request_ID = '$request_id'";
+        
+        if (mysqli_query($conn, $assignQuery)) {
+            echo "<script>alert('Technician Assigned Successfully!'); window.location.href='service-manage.php';</script>";
+        } else {
+            echo "<script>alert('Error Assigning Technician');</script>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +34,7 @@
             background-color: #f4f4f4;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
             background: white;
             padding: 20px;
@@ -42,9 +58,9 @@
             background-color: #28a745;
             color: white;
         }
-        select, button, textarea {
+        select, button {
             padding: 10px;
-            margin-top: 10px;
+            margin-top: 5px;
             border-radius: 5px;
             width: 100%;
         }
@@ -68,31 +84,42 @@
                 <th>Customer Name</th>
                 <th>Service Description</th>
                 <th>Location</th>
-                <th>Status</th>
+                <th>Assign Technician</th>
                 <th>Action</th>
             </tr>
             <?php 
-                $query = "SELECT sr.Request_ID, u.name, sr.Description, sr.Location, sr.Status 
+                // Fetch all pending service requests
+                $query = "SELECT sr.Request_ID, u.name, sr.Description, sr.Location, sr.Techinician_ID
                           FROM service_request sr 
-                          JOIN user u ON sr.User_ID = u.user_ID";
+                          JOIN user u ON sr.User_ID = u.user_ID
+                          WHERE sr.Status = 'Pending'";
 
                 $result = mysqli_query($conn, $query);
                 
-                while($row = mysqli_fetch_assoc($result)) {
+                while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>
                         <td>{$row['Request_ID']}</td>
                         <td>{$row['name']}</td>
                         <td>{$row['Description']}</td>
                         <td>{$row['Location']}</td>
                         <td>
-                            <select>
-                                <option value='Pending' " . ($row['Status'] == 'Pending' ? 'selected' : '') . ">Pending</option>
-                                <option value='In Progress' " . ($row['Status'] == 'In Progress' ? 'selected' : '') . ">In Progress</option>
-                                <option value='Completed' " . ($row['Status'] == 'Completed' ? 'selected' : '') . ">Completed</option>
-                            </select>
+                            <form method='POST' action=''>
+                                <input type='hidden' name='request_id' value='{$row['Request_ID']}'>
+                                <select name='technician_id' required>
+                                    <option value=''>Select Technician</option>";
+
+                                    // Fetch available technicians
+                                    // $techQuery = "SELECT Techinician_ID, Name FROM technician WHERE Status = 'Available'";
+                                    // $techResult = mysqli_query($conn, $techQuery);
+                                    // while ($tech = mysqli_fetch_assoc($techResult)) {
+                                    //     echo "<option value='{$tech['Techinician_ID']}'>{$tech['Name']}</option>";
+                                    // }
+
+                    echo "          </select>
                         </td>
-                        <td><button>Update</button></td>
-                    </tr>";
+                        <td><button type='submit' name='assign_technician'>Update</button></td>
+                            </form>
+                        </tr>";
                 }
             ?>
         </table>

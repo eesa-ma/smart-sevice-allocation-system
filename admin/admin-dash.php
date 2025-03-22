@@ -1,5 +1,24 @@
 <?php 
     session_start();
+    include '../includes/db.php'; 
+
+    // Query to get total users
+    $userQuery = "SELECT COUNT(*) AS user_ID FROM user"; 
+    $userResult = $conn->query($userQuery);
+    $userRow = $userResult->fetch_assoc();
+    $totalUsers = $userRow['user_ID'];
+
+    // Query to get active services
+    $activeServicesQuery = "SELECT COUNT(*) AS Request_ID FROM service_request WHERE Status != 'Completed'"; 
+    $activeServicesResult = $conn->query($activeServicesQuery);
+    $activeServicesRow = $activeServicesResult->fetch_assoc();
+    $activeServices = $activeServicesRow['Request_ID'];
+
+    // Query to get pending requests
+    $pendingRequestsQuery = "SELECT COUNT(*) AS Request_ID FROM service_request WHERE Status = 'pending'"; 
+    $pendingRequestsResult = $conn->query($pendingRequestsQuery);
+    $pendingRequestsRow = $pendingRequestsResult->fetch_assoc();
+    $pendingRequests = $pendingRequestsRow['Request_ID'];
 ?>
 
 <!DOCTYPE html>
@@ -72,6 +91,7 @@
             text-align: center;
             border-radius: 5px;
             cursor: pointer;
+            border: none;
         }
     </style>
 </head>
@@ -81,15 +101,12 @@
         <h2>Admin Panel</h2>
         <ul>
             <li><a href="#home">Dashboard</a></li>
-         
             <li><a href="../admin/service-manage.php">Manage Services</a></li>
             <li><a href="../admin/technician-create.php">Add Technician</a></li>
-            <li><a href="#">Settings</a></li>
         </ul>
         <form action="../includes/logout.php" method="POST">
             <button class="logout" name="logout">Logout</button>
         </form>
-       
     </div>
 
     <div class="main-content" id="home">
@@ -97,18 +114,20 @@
         <div class="dashboard-cards">
             <div class="card">
                 <h3>Total Users</h3>
-                <p>150</p>
+                <p><?php echo $totalUsers; ?></p>
             </div>
             <div class="card">
                 <h3>Active Services</h3>
-                <p>35</p>
+                <p><?php echo $activeServices; ?></p>
             </div>
             <div class="card">
                 <h3>Pending Requests</h3>
-                <p>10</p>
+                <p><?php echo $pendingRequests; ?></p>
             </div>
         </div>
     </div>
 
 </body>
 </html>
+
+
