@@ -1,37 +1,39 @@
+<?php
+    session_start();
+    include("../includes/db.php"); // Database connection
+
+    $user_id = $_SESSION['userid']; // Get logged-in user's ID
+
+    // Fetch service requests made by the user, including the service description
+    $query = "SELECT Request_ID, description, status FROM service_request WHERE User_ID = $user_id";
+    $result = mysqli_query($conn, $query);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>track-service</title>
+    <title>Track Service</title>
     <link rel="stylesheet" href="../public/css/global.css">
     <link rel="stylesheet" href="../user/css/track-service.css">
 </head>
 <body>
     <div class="container">
-    <h2>Track Your Service Status</h1>
-    
+        <h2>Track Your Service Status</h2>
         <table>
             <tr>
                 <th>Request ID</th>
+                <th>Description</th>
                 <th>Status</th>
             </tr>
-            <tr>
-                <td>001</td>
-                <td>Pending</td>
-            </tr>
-            <tr>
-                <td>002</td>
-                <td>Pending</td>
-            </tr>
-            <tr>
-                <td>003</td>
-                <td>Assigned</td>
-            </tr>
-            <tr>
-                <td>004</td>
-                <td>Completed</td>
-            </tr>
+            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                <tr>
+                    <td><?php echo ($row['Request_ID']); ?></td>
+                    <td><?php echo ($row['description']); ?></td>
+                    <td><?php echo ($row['status']); ?></td>
+                </tr>
+            <?php } ?>
         </table>
     </div>
 </body>

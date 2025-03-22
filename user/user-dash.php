@@ -1,5 +1,18 @@
 <?php 
     session_start();
+    include("../includes/db.php"); 
+
+    $user_id = $_SESSION['userid'];
+
+    // Fetch total orders
+    $total_orders_query = "SELECT COUNT(*) AS total FROM service_request WHERE User_ID = $user_id";
+    $total_orders_result = mysqli_query($conn, $total_orders_query);
+    $total_orders = mysqli_fetch_assoc($total_orders_result)['total'];
+
+    // Fetch pending orders
+    $pending_orders_query = "SELECT COUNT(*) AS pending FROM service_request WHERE User_ID = $user_id AND status = 'Pending'";
+    $pending_orders_result = mysqli_query($conn, $pending_orders_query);
+    $pending_orders = mysqli_fetch_assoc($pending_orders_result)['pending'];
 ?>
 
 <!DOCTYPE html>
@@ -28,17 +41,17 @@
 
     <div class="main-content">
         <div class="topbar">
-        Welcome, <?php echo isset($_SESSION["username"]) ? $_SESSION["username"] : "User"; ?>
+            Welcome, <?php echo isset($_SESSION["username"]) ? $_SESSION["username"] : "User"; ?>
         </div>
         
         <div class="cards">
             <div class="card">
                 <h3>Total Orders</h3>
-                <p>0</p>
+                <p><?php echo $total_orders; ?></p>
             </div>
             <div class="card">
                 <h3>Pending Orders</h3>
-                <p>0</p>
+                <p><?php echo $pending_orders; ?></p>
             </div>
         </div>
     </div>
