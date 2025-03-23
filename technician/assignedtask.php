@@ -67,7 +67,7 @@
                     <th>Service Type</th>
                     <th>Location</th>
                     <th>Mobile Number</th>
-                    <th>Customer Details</th>
+                   
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -77,7 +77,7 @@
                     <td>Electrical</td>
                     <td>Kozhikode, Kerala</td>
                     <td>9876543210</td>
-                    <td><button>View Details</button></td>
+                   
                     <td>
                         <select>
                             <option value="Pending">Pending</option>
@@ -94,12 +94,11 @@
                     <td>Plumbing</td>
                     <td>Ernakulam, Kerala</td>
                     <td>9876501234</td>
-                    <td><button>View Details</button></td>
+                    
                     <td>
                         <select>
-                            <option value="Pending">Pending</option>
-                            <option value="Accepted">Accepted</option>
                             <option value="In Progress">In Progress</option>
+                            <option value="Accepted">Accepted</option>
                             <option value="Completed">Completed</option>
                         </select>
                     </td>
@@ -111,7 +110,7 @@
                     <td>Garden</td>
                     <td>Thiruvananthapuram, Kerala</td>
                     <td>9876123456</td>
-                    <td><button>View Details</button></td>
+                    
                     <td>
                         <select>
                             <option value="Pending">Pending</option>

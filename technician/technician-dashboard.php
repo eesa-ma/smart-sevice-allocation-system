@@ -1,7 +1,21 @@
 <?php
 session_start();
-?>
+include '../includes/db.php';
 
+$technician_id = $_SESSION["technicianid"];
+
+// Fetch assigned tasks count (Status: In progress)
+$query_assigned = "SELECT COUNT(*) AS assigned_count FROM service_request WHERE Techinician_ID = $technician_id AND Status = 'In progress'";
+$result_assigned = mysqli_query($conn, $query_assigned);
+$row_assigned = mysqli_fetch_assoc($result_assigned);
+$assigned_tasks = $row_assigned['assigned_count'];
+
+// Fetch completed tasks count (Status: Completed)
+$query_completed = "SELECT COUNT(*) AS completed_count FROM service_request WHERE Techinician_ID = $technician_id AND Status = 'Completed'";
+$result_completed = mysqli_query($conn, $query_completed);
+$row_completed = mysqli_fetch_assoc($result_completed);
+$completed_tasks = $row_completed['completed_count'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,57 +37,31 @@ session_start();
             <a href="#">Profile</a>
             <a href="#">Settings</a>
             <form action="../includes/logout.php" method="POST">
-            <button class="logout" name="logout">Logout</button>
-        </form>
+                <button class="logout" name="logout">Logout</button>
+            </form>
         </div>
         <div class="content">
             <h2>Welcome, Technician</h2>
             <div class="card-container">
                 <div class="card">
-                    ><h5>Assigned Tasks</h5>
-                    <p>10</p>
+                    <h5>Assigned Tasks</h5>
+                    <p><?php echo $assigned_tasks; ?></p>
                 </div>
                 <div class="card">
                     <h5>Completed Tasks</h5>
-                    <p>7</p>
+                    <p><?php echo $completed_tasks; ?></p>
                 </div>
             </div>
         </div>
         <div class="techside">
-            <h2>profile</h2> <br>
+            <h2>Profile</h2> <br>
             <i class="fa-regular fa-user"></i> <br>
-            <p id="techeid">Technician id:<?php echo isset($_SESSION["technicianid"]) ? $_SESSION["technicianid"] : "Technician-ID"; ?></p> <br>
-            <p id="techname" name="techname"><?php echo isset($_SESSION["name"]) ? $_SESSION["name"] : "Technician"; ?></p> 
+            <p id="techeid">Technician ID: <?php echo isset($_SESSION["technicianid"]) ? $_SESSION["technicianid"] : "Technician-ID"; ?></p> <br>
+            <p id="techname"><?php echo isset($_SESSION["name"]) ? $_SESSION["name"] : "Technician"; ?></p> 
             <button class="attendance-button" id="attendanceBtn">Unavailable</button>
-            
         </div>
-        
     </div>
     <script src="https://kit.fontawesome.com/781c7c7d6c.js" crossorigin="anonymous"></script>
     <script src="../technician/js/attendancebtn.js"></script>
-    <script>
-    document.getElementById("attendanceBtn").addEventListener("click", function () {
-        let btn = this;
-
-        fetch("../technician/attendance.php", {
-            method: "POST"
-        })
-        .then(response => response.text())
-        .then(data => {
-            if (data === "1") {
-                btn.innerHTML = "Available";
-                btn.style.backgroundColor = "green";
-            } else if (data === "0") {
-                btn.innerHTML = "Unavailable";
-                btn.style.backgroundColor = "red";
-            } else {
-                console.error("Error updating status");
-            }
-        })
-        .catch(error => console.error("Fetch Error:", error));
-    });
-</script>
-
 </body>
-
 </html>

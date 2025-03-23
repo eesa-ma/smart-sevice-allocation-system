@@ -2,7 +2,7 @@
     session_start();
     if (!isset($_SESSION["userid"])) {
         echo "<script>alert('User not logged in. Please log in first.'); window.location.href='../user/user-signin.php';</script>";
-        exit();
+        exit();  
     }
     include '../includes/db.php';
 
@@ -16,8 +16,8 @@
             $userID = $_SESSION["userid"];
         }
        
-        $sql = "INSERT INTO service_request (Description, Location, Status,User_ID) 
-                VALUES ('$description', '$location', 'Pending','$userID')";
+        $sql = "INSERT INTO service_request (Description, Location, Status, User_ID) 
+                VALUES ('$description', '$location', 'Pending', '$userID')";
         $result = mysqli_query($conn, $sql);
 
         if($result) {
@@ -86,7 +86,7 @@
             <label for="serviceType">Type of Service:</label>
             <select id="serviceType" name="serviceType" required>
                 <option value="">Select</option>
-                <option value="electronics-repair">Electronics repair</option>
+                <option value="electronics-repair">Electronics Repair</option>
                 <option value="device-installation">Device Installation & Setup</option>
                 <option value="technical-troubleshooting">Technical Troubleshooting</option>
             </select>
@@ -94,8 +94,24 @@
             <label for="description">Service Description:</label>
             <textarea id="description" name="description" required></textarea>
             
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location" required>
+            <label for="location">District:</label>
+            <select id="location" name="location" required>
+                <option value="">Select District</option>
+                <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                <option value="Kollam">Kollam</option>
+                <option value="Pathanamthitta">Pathanamthitta</option>
+                <option value="Alappuzha">Alappuzha</option>
+                <option value="Kottayam">Kottayam</option>
+                <option value="Idukki">Idukki</option>
+                <option value="Ernakulam">Ernakulam</option>
+                <option value="Thrissur">Thrissur</option>
+                <option value="Palakkad">Palakkad</option>
+                <option value="Malappuram">Malappuram</option>
+                <option value="Kozhikode">Kozhikode</option>
+                <option value="Wayanad">Wayanad</option>
+                <option value="Kannur">Kannur</option>
+                <option value="Kasaragod">Kasaragod</option>
+            </select>
 
             <label for="mobile">Mobile Number:</label>
             <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number" required>

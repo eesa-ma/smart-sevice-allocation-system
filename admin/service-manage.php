@@ -108,12 +108,14 @@
                                 <select name='technician_id' required>
                                     <option value=''>Select Technician</option>";
 
-                                    // Fetch available technicians
-                                    // $techQuery = "SELECT Techinician_ID, Name FROM technician WHERE Status = 'Available'";
-                                    // $techResult = mysqli_query($conn, $techQuery);
-                                    // while ($tech = mysqli_fetch_assoc($techResult)) {
-                                    //     echo "<option value='{$tech['Techinician_ID']}'>{$tech['Name']}</option>";
-                                    // }
+                                   // Fetch available technicians
+                                    $loc = $row['Location'];
+                                    echo $loc;
+                                    $techQuery = "SELECT Techinician_ID, Name FROM technician WHERE Availability_Status = 1 AND Location LIKE '%$loc%'";
+                                    $techResult = mysqli_query($conn, $techQuery);
+                                    while ($tech = mysqli_fetch_assoc($techResult)) {
+                                        echo "<option value='{$tech['Techinician_ID']}'>{$tech['Name']}</option>";
+                                    }
 
                     echo "          </select>
                         </td>
