@@ -72,6 +72,3 @@ The **Smart Service Allocation System** is a web-based platform designed to stre
 ├── .gitignore               # Git ignore file
 └── .env                     # Environment variables
 ```
-
-## Contributing
-Contributions are welcome! If you have ideas or find issues, feel free to open an issue or submit a pull request.
