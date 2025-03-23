@@ -1,6 +1,7 @@
-<?php 
-    session_start();
+<?php
+session_start();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,13 +44,36 @@
             <i class="fa-regular fa-user"></i> <br>
             <p id="techeid">Technician id:<?php echo isset($_SESSION["technicianid"]) ? $_SESSION["technicianid"] : "Technician-ID"; ?></p> <br>
             <p id="techname" name="techname"><?php echo isset($_SESSION["name"]) ? $_SESSION["name"] : "Technician"; ?></p> 
-            <button class="attendance-button" name="techeattendance" id="techeattendance" onclick="markAttendance()">Unavailable</button>
+            <button class="attendance-button" id="attendanceBtn">Unavailable</button>
             
         </div>
         
     </div>
     <script src="https://kit.fontawesome.com/781c7c7d6c.js" crossorigin="anonymous"></script>
     <script src="../technician/js/attendancebtn.js"></script>
+    <script>
+    document.getElementById("attendanceBtn").addEventListener("click", function () {
+        let btn = this;
+
+        fetch("../technician/attendance.php", {
+            method: "POST"
+        })
+        .then(response => response.text())
+        .then(data => {
+            if (data === "1") {
+                btn.innerHTML = "Available";
+                btn.style.backgroundColor = "green";
+            } else if (data === "0") {
+                btn.innerHTML = "Unavailable";
+                btn.style.backgroundColor = "red";
+            } else {
+                console.error("Error updating status");
+            }
+        })
+        .catch(error => console.error("Fetch Error:", error));
+    });
+</script>
+
 </body>
 
 </html>
