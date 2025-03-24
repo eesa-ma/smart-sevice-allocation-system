@@ -1,18 +1,21 @@
-document.getElementById("attendanceBtn").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent default button action
+document.getElementById("techeattendance").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent form submission
     let btn = this;
 
-    fetch("../technician/attendance.php", { method: "POST" }) // Ensure correct path
+    fetch("../technician/attendance.php", { method: "POST" })
     .then(response => response.text())
     .then(data => {
-        if (data.trim() === "1") {  // Ensure it matches "1" exactly
-            btn.innerHTML = "Available";
-            btn.style.backgroundColor = "green";
-        } else if (data.trim() === "0") {
-            btn.innerHTML = "Unavailable";
-            btn.style.backgroundColor = "red";
+        if (data === "success") {
+            // Toggle button text and color
+            if (btn.innerHTML === "Unavailable") {
+                btn.innerHTML = "Available";
+                btn.style.backgroundColor = "green";
+            } else {
+                btn.innerHTML = "Unavailable";
+                btn.style.backgroundColor = "red";
+            }
         } else {
-            console.error("Database update failed:", data);
+            console.error("Database update failed");
         }
     })
     .catch(error => console.error("Fetch Error:", error));
