@@ -20,8 +20,7 @@ session_start();
             <h2>Technician Panel</h2>
             <a href="#">Dashboard</a>
             <a href="../technician/assignedtask.php">Assigned Tasks</a>
-            <a href="#">Profile</a>
-            <a href="#">Settings</a>
+            <a href="#">Feedbacks</a>
             <form action="../includes/logout.php" method="POST">
             <button class="logout" name="logout">Logout</button>
         </form>
