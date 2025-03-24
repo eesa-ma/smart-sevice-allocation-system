@@ -8,7 +8,9 @@ $query = "SELECT r.Request_ID, u.name AS customer_name,
                  u.Address, u.Phone_NO, r.Status
           FROM service_request r
           JOIN user u ON r.User_ID = u.user_ID
-          WHERE r.Techinician_ID = $technician_id";
+          WHERE r.Techinician_ID = $technician_id 
+          AND r.Status != 'Completed'";
+
 
 $result = mysqli_query($conn, $query);
 ?>
