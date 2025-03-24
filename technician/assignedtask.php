@@ -1,3 +1,18 @@
+<?php
+session_start();
+include '../includes/db.php'; // Database connection
+
+$technician_id = $_SESSION["technicianid"]; 
+
+$query = "SELECT r.Request_ID, u.name AS customer_name, 
+                 u.Address, u.Phone_NO, r.Status
+          FROM service_request r
+          JOIN user u ON r.User_ID = u.user_ID
+          WHERE r.Techinician_ID = $technician_id";
+
+$result = mysqli_query($conn, $query);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,63 +79,30 @@
                 <tr>
                     <th>Request ID</th>
                     <th>Customer Name</th>
-                    <th>Service Type</th>
                     <th>Location</th>
                     <th>Mobile Number</th>
-                   
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
+                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
-                    <td>001</td>
-                    <td>Ashir</td>
-                    <td>Electrical</td>
-                    <td>Kozhikode, Kerala</td>
-                    <td>9876543210</td>
-                   
+                    <td><?php echo $row['Request_ID']; ?></td>
+                    <td><?php echo $row['customer_name']; ?></td>
+                    <td><?php echo $row['Address']; ?></td>
+                    <td><?php echo $row['Phone_NO']; ?></td>
                     <td>
-                        <select>
-                            <option value="Pending">Pending</option>
-                            <option value="Accepted">Accepted</option>
-                            <option value="In Progress">In Progress</option>
-                            <option value="Completed">Completed</option>
-                        </select>
+                        <form action="update_status.php" method="POST">
+                            <input type="hidden" name="request_id" value="<?php echo $row['Request_ID']; ?>">
+                            <select name="status" required>
+                                <option value="" disabled selected>Select </option>
+                                <option value="Accepted" <?php if ($row['Status'] == 'Accepted') echo 'selected'; ?>>Accepted</option>
+                                <option value="Completed" <?php if ($row['Status'] == 'Completed') echo 'selected'; ?>>Completed</option>
+                            </select>
                     </td>
-                    <td><button>Update</button></td>
+                    <td><button type="submit">Update</button></td>
+                    </form>
                 </tr>
-                <tr>
-                    <td>002</td>
-                    <td>Eesa</td>
-                    <td>Plumbing</td>
-                    <td>Ernakulam, Kerala</td>
-                    <td>9876501234</td>
-                    
-                    <td>
-                        <select>
-                            <option value="In Progress">In Progress</option>
-                            <option value="Accepted">Accepted</option>
-                            <option value="Completed">Completed</option>
-                        </select>
-                    </td>
-                    <td><button>Update</button></td>
-                </tr>
-                <tr>
-                    <td>003</td>
-                    <td>Deva</td>
-                    <td>Garden</td>
-                    <td>Thiruvananthapuram, Kerala</td>
-                    <td>9876123456</td>
-                    
-                    <td>
-                        <select>
-                            <option value="Pending">Pending</option>
-                            <option value="Accepted">Accepted</option>
-                            <option value="In Progress">In Progress</option>
-                            <option value="Completed">Completed</option>
-                        </select>
-                    </td>
-                    <td><button>Update</button></td>
-                </tr>
+                <?php } ?>
             </table>
         </div>
     </div>
