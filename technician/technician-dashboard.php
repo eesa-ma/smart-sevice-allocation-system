@@ -20,7 +20,7 @@ session_start();
             <h2>Technician Panel</h2>
             <a href="#">Dashboard</a>
             <a href="../technician/assignedtask.php">Assigned Tasks</a>
-            <a href="#">Feedbacks</a>
+            <a href="../technician/view-feedback.php">Feedbacks</a>
             <form action="../includes/logout.php" method="POST">
             <button class="logout" name="logout">Logout</button>
         </form>
@@ -29,7 +29,7 @@ session_start();
             <h2>Welcome, Technician</h2>
             <div class="card-container">
                 <div class="card">
-                    ><h5>Assigned Tasks</h5>
+                    <h5>Assigned Tasks</h5>
                     <p>10</p>
                 </div>
                 <div class="card">

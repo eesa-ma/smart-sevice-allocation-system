@@ -25,6 +25,7 @@
                     alert('Your service request has been submitted successfully!');
                     window.location.href = '../user/user-dash.php';
                   </script>";
+                
         } else {
             echo "Error: " . mysqli_error($conn);
         }
