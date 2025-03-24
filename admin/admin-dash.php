@@ -103,6 +103,7 @@
             <li><a href="#home">Dashboard</a></li>
             <li><a href="../admin/service-manage.php">Manage Services</a></li>
             <li><a href="../admin/technician-create.php">Add Technician</a></li>
+            <li><a href="../admin/admin-feedback.php">Feedbacks</a></li>
         </ul>
         <form action="../includes/logout.php" method="POST">
             <button class="logout" name="logout">Logout</button>
