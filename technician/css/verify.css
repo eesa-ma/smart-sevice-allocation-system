@@ -1,5 +1,11 @@
 body {
     overflow-y: hidden;
+    background-image: url('/smart-sevice-allocation-system/public/images/all.png'); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
 }
 
 .div-container {

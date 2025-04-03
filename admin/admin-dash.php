@@ -26,12 +26,17 @@
     <title>Admin Dashboard</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            background: #f3f3e0
-        }
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: #f3f3e0;
+    background-image: url('/smart-sevice-allocation-system/public/images/admindash.png'); 
+    background-size: contain; /* Ensures the whole image is displayed without cropping */
+    background-position: right; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repetition */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+}
         .sidebar {
             width: 200px;
             height: 100vh;

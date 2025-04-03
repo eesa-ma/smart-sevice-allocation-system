@@ -7,17 +7,24 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #f3f3e0;
+    background-image: url('/smart-sevice-allocation-system/public/images/all.png'); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
 
 }
 
 .container {
     max-width: 800px;
     margin: auto;
-    background: white;
+    background: #333333;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 h2 {
@@ -34,8 +41,8 @@ th, td {
     text-align: left;
 }
 th {
-    background-color: #28a745;
-    color: white;
+    background-color: #f3f3e0;
+    color: black;
 }
 
  

@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="../public/css/submit-button.css">
 </head>
 <body>
+    <div class="container">
     <h1>TECHNICIAN LOGIN</h1>
     <form action="technician_login.php" method="post">
         <table>
@@ -67,5 +68,6 @@
             </tr>
         </table>
     </form>
+    </div>
 </body>
 </html>

@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="../public/css/submit-button.css">
 </head>
 <body>
+    <div class="container">
     <header>
         <h1>SMART SERVICE ALLOCATION SYSTEM</h1>
     </header>
@@ -72,5 +73,6 @@
             </tr>
         </table>
     </form>
+</div>
 </body>
 </html>

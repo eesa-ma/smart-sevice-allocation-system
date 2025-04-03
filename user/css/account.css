@@ -17,3 +17,11 @@ a {
 a:hover {
     text-decoration: underline;
 }
+body{
+    background-image: url('/smart-sevice-allocation-system/public/images/all.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}

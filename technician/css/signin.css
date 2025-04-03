@@ -1,9 +1,23 @@
 body {
-    background-color: rgb(240, 240, 240);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow-x: hidden;
+    background-color: #f3f3e0;
+    background-image: url('/smart-sevice-allocation-system/public/images/tech.png'); 
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    text-align: center;
 }
 
 h1 {
@@ -24,10 +38,18 @@ h1 {
 a {
     display: block;
     margin-top: 10px;
-    color: #007bff;
+    color: white;
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+form {
+    background-color: #333333;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
 }

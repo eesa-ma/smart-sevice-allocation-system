@@ -29,12 +29,18 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            color:white;
+            background-color: #f3f3e0;
+            background-image: url('/smart-sevice-allocation-system/public/images/all.png'); 
+            background-size: cover; /* Ensures the whole image is displayed without cropping */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents repetition */
+            background-attachment: fixed;
         }
         .container {
             max-width: 900px;
             margin: auto;
-            background: white;
+            background: #333333 ;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -48,13 +54,13 @@
             margin-top: 20px;
         }
         th, td {
-            border: 1px solid #ccc;
+            border: 2px solid #ccc;
             padding: 10px;
             text-align: left;
         }
         th {
-            background-color: #28a745;
-            color: white;
+            background-color: #f3f3e0;
+            color: black;
         }
         select, button {
             padding: 10px;
@@ -63,13 +69,13 @@
             width: 100%;
         }
         button {
-            background: #007bff;
+            background: #FF0000;
             color: white;
             border: none;
             cursor: pointer;
         }
         button:hover {
-            background: #0056b3;
+            background: darkred;
         }
     </style>
 </head>
