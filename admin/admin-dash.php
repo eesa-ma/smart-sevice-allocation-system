@@ -30,6 +30,7 @@
             margin: 0;
             padding: 0;
             display: flex;
+            background: #f3f3e0
         }
         .sidebar {
             width: 200px;
@@ -81,13 +82,36 @@
             left: 50%;
             transform: translateX(-50%);
             background: red;
-            padding: 10px;
+            padding: 10px 20px; 
             color: white;
             text-align: center;
             border-radius: 5px;
             cursor: pointer;
             border: none;
+            width: 120px;  
+            font-size: 16px; 
+            text-transform: uppercase; 
         }
+        .backbutton {
+            position: absolute;
+            bottom: 100px; 
+            left: 50%;
+            transform: translateX(-50%);
+            background: red;
+            padding: 10px 20px;  
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            width: 120px; 
+            font-size: 16px; 
+            text-transform: uppercase; 
+        }
+    .backbutton:hover {
+        background: darkred; 
+        }
+
     </style>
 </head>
 <body>
@@ -99,6 +123,9 @@
             <li><a href="../admin/technician-create.php">Add Technician</a></li>
             <li><a href="../admin/admin-feedback.php">Feedbacks</a></li>
         </ul>
+        <button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button>
         <form action="../includes/logout.php" method="POST">
             <button class="logout" name="logout">Logout</button>
         </form>
@@ -120,6 +147,7 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>
 
