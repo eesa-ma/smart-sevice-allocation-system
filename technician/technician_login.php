@@ -3,22 +3,18 @@
     include '../includes/db.php';
 
     if(isset($_POST["submit"])) {
-        $techncianemail = $_POST["techemail"]; // Corrected input name
-        $password = $_POST["techpassword"];   // Corrected input name
-
+        $techncianemail = $_POST["techemail"]; 
+        $password = $_POST["techpassword"];   
         $sql = "SELECT * FROM technician WHERE Email = '$techncianemail'";
         $result = mysqli_query($conn, $sql);
-
         if (!$result) {
             die("Database query failed: " . mysqli_error($conn));
         }
-
         if ($row = mysqli_fetch_assoc($result)) {
-            if ($password === $row["Password"]) { // Direct password comparison (no hashing)
+            if ($password === $row["Password"]) { 
                 $_SESSION["technicianid"] = $row["Techinician_ID"];
                 $_SESSION["name"] = $row["Name"];
                 $_SESSION["technicianemail"] = $row["Email"];
-
                 header("Location: technician-dashboard.php");
                 exit();
             } else {
@@ -29,7 +25,6 @@
         }
     }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,10 +53,9 @@
                 <td><input type="password" id="techhpassword" name="techpassword"></td>
             </tr>
             <tr>
-                <!-- <td colspan="2" id="savetechinfo"><input type="checkbox" id="techlogincheck" name="techlogincheck">&nbsp<label for="techlogincheck">Save login info</label></td> -->
             </tr>
             <tr> 
-                <td><p id="techloginerror" name="techloginerror"></p></td> <!--for displaying error message -->
+                <td><p id="techloginerror" name="techloginerror"></p></td> 
             </tr>
             <tr>
             <td colspan="2">

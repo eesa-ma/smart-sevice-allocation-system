@@ -5,8 +5,6 @@
     if (isset($_POST['assign_technician'])) {
         $request_id = $_POST['request_id'];
         $technician_id = $_POST['technician_id'];
-
-        // Assign technician and update status to "In Progress"
         $assignQuery = "UPDATE service_request 
                         SET Techinician_ID = '$technician_id', Status = 'In Progress' 
                         WHERE Request_ID = '$request_id'";
@@ -88,14 +86,11 @@
                 <th>Action</th>
             </tr>
             <?php 
-                // Fetch all pending service requests
                 $query = "SELECT sr.Request_ID, u.name, sr.Description, sr.Location, sr.Techinician_ID
                           FROM service_request sr 
                           JOIN user u ON sr.User_ID = u.user_ID
                           WHERE sr.Status = 'Pending'";
-
                 $result = mysqli_query($conn, $query);
-                
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>
                         <td>{$row['Request_ID']}</td>
@@ -107,8 +102,6 @@
                                 <input type='hidden' name='request_id' value='{$row['Request_ID']}'>
                                 <select name='technician_id' required>
                                     <option value=''>Select Technician</option>";
-
-                                   // Fetch available technicians
                                     $loc = $row['Location'];
                                     echo $loc;
                                     $techQuery = "SELECT Techinician_ID, Name FROM technician WHERE Availability_Status = 1 AND Location LIKE '%$loc%'";

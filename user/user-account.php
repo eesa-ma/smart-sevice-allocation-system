@@ -16,10 +16,6 @@ if(isset($_POST["submit"])) {
     if ($password !== $confirmpassword) {
         echo "<script>alert('Passwords do not match.');</script>";
     } else {
-        // Hash password
-        // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-        // Insert into database
         $sql = "INSERT INTO user (Name, Email, Phone_No,Address, Password) 
                 VALUES ('$name', '$email', '$phoneno', '$address', '$password')";
 

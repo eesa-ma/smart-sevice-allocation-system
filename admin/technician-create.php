@@ -13,13 +13,11 @@
         $skills = $_POST["tech-skill"];
         $password = $_POST["technicain-password"];
         $confirmpassword = $_POST["confirm-password"];
-
         if ($password !== $confirmpassword) {
             echo "<script>alert('Passwords do not match.');</script>";
         } else { 
             $sql = "INSERT INTO technician (Name, Skills, Location, Phone_No, Email, Password)
             VALUES ('$name','$skills','$address','$phoneno','$email','$password')";
-
         if (mysqli_query($conn, $sql)) {
             echo "<script>alert('Account created successfully!');window.location.href='admin-dash.php';</script>";
             exit();
@@ -39,13 +37,13 @@
 </head>
 <body>
     <header>
-    <h1><center> Create Technician </center></h1>
+    <h1><center> Register Technician </center></h1>
     </header>
     <section class="create-tech">
         <form action="" method="post">
             <table>
                 <tr>
-                    <th colspan="2">Create Technician</th>
+                    <th colspan="2">Register Technician</th>
                 </tr>
                 <tr>
                     <td><label for="techname">Technician Name:</label></td>
@@ -87,7 +85,6 @@
                 <tr>
                     <td colspan="2"><center><input type="submit" value="CREATE ACCOUNT" id="submit" name="submit"></center></td>
                 </tr>
-
             </table>   
         </form>
     </section>

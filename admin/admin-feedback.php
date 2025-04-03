@@ -1,18 +1,15 @@
 <?php
-include '../includes/db.php'; // Database connection
+include '../includes/db.php'; 
 session_start();
 if (!isset($_SESSION["Admin_ID"])) {
     header("Location: admin-login.php"); 
     exit();
 }
-
-// Fetch all feedback records
 $query = "SELECT f.Feedback_ID, f.Comments, f.Rating, f.Request_ID, u.Name AS User_Name, t.Name AS Technician_Name 
           FROM feedback f
           JOIN service_request s ON f.Request_ID = s.Request_ID
           JOIN user u ON f.User_ID = u.user_ID
           JOIN technician t ON s.Techinician_ID = t.Techinician_ID";
-
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -33,9 +30,7 @@ $result = mysqli_query($conn, $query);
     </style>
 </head>
 <body>
-
 <h2>All Feedback</h2>
-
 <table>
     <tr>
         <th>Feedback ID</th>
@@ -56,8 +51,6 @@ $result = mysqli_query($conn, $query);
     </tr>
     <?php } ?>
 </table>
-
 <a href="admin-dash.php" class="back-btn">Back to Dashboard</a>
-
 </body>
 </html>

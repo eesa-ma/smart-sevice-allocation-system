@@ -1,11 +1,9 @@
 <?php 
     session_start();
     include '../includes/db.php';
-
     if(isset($_POST["submit"])) {
         $adminid = $_POST["admin-id"];
         $password = $_POST["admin-pass"];
-
         $sql = "SELECT * FROM admin WHERE Admin_ID = '$adminid'";
         $result = mysqli_query($conn,$sql);
 
@@ -59,7 +57,6 @@
                 <tr>
                     <td colspan="2"><center><input type="submit" value="LOGIN" id="submit" name="submit"></center></td>
                 </tr>
-
             </table>   
         </form>
     </section>

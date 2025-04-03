@@ -6,11 +6,9 @@
     <title>landingpage</title>
     <link rel="stylesheet" href="css/submit-button.css">
     <link rel="stylesheet" href="css/global.css">
-
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
     <header>
         <nav>
             <div class="logo">
@@ -20,7 +18,6 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about-section">About</a></li>
                 <li><a href="#services">Service</a></li>
-                <!-- <li><a href="#">Contact</a></li> -->
                 <li class="dropdown">
                     <a href="#">Login ▼</a>
                     <ul class="dropdown-menu">
@@ -32,21 +29,15 @@
             </ul>
         </nav>
     </header>
-    
-
-     <!-- hero section -->
      <section id="home" class="hero">
         <div id="hero-text">
             <h1>Smart Service Solutions at Your Fingertips!</h1>
             <p>Easily request and track services, with skilled technicians assigned at your location.</p>
-            <!-- add image of technician assisting customer -->
         </div>
         <div>
             <img src="images/technician.png" alt="technician">
         </div>
      </section>
-     
-     <!-- About Section -->
     <section id="about-section">
         <h2>About Our System</h2>
         <div id="about">
@@ -66,7 +57,6 @@
             <p>✔ Location-based Assignments – Technicians are assigned based on proximity for faster response.</p>
             <p>✔ Real-time Tracking – Users can check whether their request has been assigned.</p>
             <p>✔ Technician Availability Management – Technicians can mark themselves as Available/Unavailable.</p>
-            <!-- <p> Our system streamlines service management, ensuring faster resolutions and better service experiences! </p> -->
         </div>
     </section>
 
@@ -96,26 +86,11 @@
             <img src="images/troubleshoot.png" alt="technician">
         </div>
     </section> 
-
-    <!-- add a section to display the feedback by user -->
-
-    <!-- <section id="Contact">
-        <h2>Contact US</h2>
-        <form action="#" method="POST">
-            <input type="text" id="" name="" placeholder="Enter your name" required>
-            <input type="email" id=""  name="" placeholder="Enter your email id" required>
-            <textarea name="" id="" placeholder="Your Message"></textarea>
-            <input type="submit">
-        </form>
-    </section> -->
-
     <section id="direct-user-login">
         <p>Having a problem?</p>
         <p>We'll fixed today!</p>
         <a href="../user/user-signin.php" id="submit"  >Get Started</a>
     </section>
-
-     <!-- Footer -->
      <footer>
         <p>&copy; 2025 Smart Service Allocation System</p>
     </footer>

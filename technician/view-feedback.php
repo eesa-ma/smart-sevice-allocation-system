@@ -1,19 +1,16 @@
 <?php
-include '../includes/db.php'; // Database connection
+include '../includes/db.php'; 
 session_start();
 if (!isset($_SESSION["technicianid"])) {
-    header("Location: login.php"); // Redirect if not logged in
+    header("Location: login.php"); 
     exit();
 }
 $technician_id = $_SESSION["technicianid"];
-
-// Fetch feedback related to the technician's services
 $query = "SELECT f.Feedback_ID, f.Comments, f.Rating, f.Request_ID, u.Name AS User_Name 
           FROM feedback f
           JOIN service_request s ON f.Request_ID = s.Request_ID
           JOIN user u ON f.User_ID = u.user_ID
           WHERE s.Techinician_ID = '$technician_id'";
-
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -34,9 +31,7 @@ $result = mysqli_query($conn, $query);
     </style>
 </head>
 <body>
-
 <h2>Feedback for Your Services</h2>
-
 <table>
     <tr>
         <th>Feedback ID</th>
@@ -55,8 +50,6 @@ $result = mysqli_query($conn, $query);
     </tr>
     <?php } ?>
 </table>
-
 <a href="technician-dashboard.php" class="back-btn">Back to Dashboard</a>
-
 </body>
 </html>

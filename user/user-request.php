@@ -113,10 +113,8 @@
                 <option value="Kannur">Kannur</option>
                 <option value="Kasaragod">Kasaragod</option>
             </select>
-
             <label for="mobile">Mobile Number:</label>
             <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number" required>
-            
             <button type="submit" id="submit" name="submit">Submit Request</button>
         </form>
     </div>

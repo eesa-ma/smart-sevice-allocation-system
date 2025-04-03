@@ -1,20 +1,16 @@
 <?php 
     session_start();
     include '../includes/db.php'; 
-
-    // Query to get total users
     $userQuery = "SELECT COUNT(*) AS user_ID FROM user"; 
     $userResult = $conn->query($userQuery);
     $userRow = $userResult->fetch_assoc();
     $totalUsers = $userRow['user_ID'];
 
-    // Query to get active services
     $activeServicesQuery = "SELECT COUNT(*) AS Request_ID FROM service_request WHERE Status != 'Completed'"; 
     $activeServicesResult = $conn->query($activeServicesQuery);
     $activeServicesRow = $activeServicesResult->fetch_assoc();
     $activeServices = $activeServicesRow['Request_ID'];
 
-    // Query to get pending requests
     $pendingRequestsQuery = "SELECT COUNT(*) AS Request_ID FROM service_request WHERE Status = 'pending'"; 
     $pendingRequestsResult = $conn->query($pendingRequestsQuery);
     $pendingRequestsRow = $pendingRequestsResult->fetch_assoc();
@@ -28,7 +24,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/global.css">
     <title>Admin Dashboard</title>
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -96,7 +91,6 @@
     </style>
 </head>
 <body>
-
     <div class="sidebar">
         <h2>Admin Panel</h2>
         <ul>
@@ -109,7 +103,6 @@
             <button class="logout" name="logout">Logout</button>
         </form>
     </div>
-
     <div class="main-content" id="home">
         <h1>Welcome, Admin</h1>
         <div class="dashboard-cards">
@@ -127,7 +120,6 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>
 

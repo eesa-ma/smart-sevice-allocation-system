@@ -1,10 +1,7 @@
 <?php
     session_start();
-    include("../includes/db.php"); // Database connection
-
-    $user_id = $_SESSION['userid']; // Get logged-in user's ID
-
-    // Fetch service requests made by the user, including the service description
+    include("../includes/db.php"); 
+    $user_id = $_SESSION['userid']; 
     $query = "SELECT Request_ID, description, status FROM service_request WHERE User_ID = $user_id";
     $result = mysqli_query($conn, $query);
 ?>
