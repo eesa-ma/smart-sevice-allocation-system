@@ -26,7 +26,7 @@
     <title>Admin Dashboard</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
+    font-family: 'nunito', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -126,7 +126,7 @@
             <li><a href="#home">Dashboard</a></li>
             <li><a href="../admin/service-manage.php">Manage Services</a></li>
             <li><a href="../admin/technician-create.php">Add Technician</a></li>
-            <li><a href="../user/track-service.php">Track status</a></li>
+            <li><a href="../admin/track-service.php">Track Service Status</a></li>
             <li><a href="../admin/admin-feedback.php">Feedbacks</a></li>
         </ul>
         <button onclick="history.back()" class="backbutton" name="backbutton" >
