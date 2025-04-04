@@ -124,6 +124,9 @@ $result = mysqli_query($conn, $query);
                 </tr>
                 <?php } ?>
             </table>
+            <center><button onclick="history.back()" class="backbutton" name="backbutton">
+        back
+        </button></center>
         </div>
     </div>
 </body>
