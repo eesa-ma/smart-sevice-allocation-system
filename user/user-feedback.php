@@ -37,6 +37,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         select, textarea, button { width: 100%; padding: 10px; margin-top: 5px; }
         button { background-color:red; color: white; border: none; cursor: pointer; }
         button:hover { background-color: darkred; }
+        .backbutton {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.backbutton:hover {
+    background: darkred;
+}
     </style>
     <script>
         function showServiceDetails() {
@@ -70,6 +84,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <label>Comments:</label>
     <textarea name="comments" required></textarea>
     <button type="submit">Submit Feedback</button>
+    <center><button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button></center>
 </form>
 </body>
 </html>

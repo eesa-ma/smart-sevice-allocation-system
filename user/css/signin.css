@@ -73,6 +73,18 @@ input {
     cursor: pointer;
 }
 
+.backbutton {
+    width: 50%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.backbutton:hover{
+    background: darkred;
+}
 a {
     display: block;
     margin-top: 10px;

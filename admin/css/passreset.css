@@ -14,3 +14,15 @@ body {
 .div-container {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
 }
+.backbutton {
+    width: 35%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.backbutton:hover{
+    background: darkred;
+}

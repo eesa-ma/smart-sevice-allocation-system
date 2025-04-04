@@ -86,6 +86,13 @@
                 <tr>
                     <td colspan="2"><center><input type="submit" value="CREATE ACCOUNT" id="submit" name="submit"></center></td>
                 </tr>
+                <tr>
+            <td colspan="2">
+                <center><button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button></center>
+            </td>
+            </tr>
             </table>   
         </form>
     </section>

@@ -66,6 +66,13 @@
             </td>
             </tr>
             <tr>
+            <td colspan="2">
+                <center><button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button></center>
+            </td>
+            </tr>
+            <tr>
                <td colspan="2"><center><a href="../user/user-verify.php" >Forgotten your password?</a></center></td> 
             </tr>
             <tr>

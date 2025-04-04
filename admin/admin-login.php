@@ -50,12 +50,20 @@
                         <td><label for="admin-pass">Password:</label></td>
                         <td><input type="password" name="admin-pass" id="admin-pass" required></td>
                     </tr>
+                    
                     <tr>
                         <td colspan="2"><center><a href="../admin/verify-admin.php">Forgotten your password?</a></center></td>
                     </tr>
                     <tr>
                         <td colspan="2"><center><input type="submit" value="LOGIN" id="submit" name="submit"></center></td>
                     </tr>
+                    <tr>
+            <td colspan="2">
+                <center><button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button></center>
+            </td>
+            </tr>
                 </table>   
             </form>
         </section>

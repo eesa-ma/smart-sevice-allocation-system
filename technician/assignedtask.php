@@ -75,6 +75,18 @@ $result = mysqli_query($conn, $query);
         button:hover {
             background: darkred;
         }
+        .backbutton {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.backbutton:hover{
+    background: darkred;
+}
     </style>
 </head>
 <body>
@@ -110,6 +122,9 @@ $result = mysqli_query($conn, $query);
                 </tr>
                 <?php } ?>
             </table>
+            <center><button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button></center>
         </div>
     </div>
 </body>

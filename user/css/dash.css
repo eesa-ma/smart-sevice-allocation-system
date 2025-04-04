@@ -73,11 +73,37 @@ body {
     left: 50%;
     transform: translateX(-50%);
     background: red;
-    padding: 10px;
+    padding: 10px 20px; 
     color: white;
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
+    border: none;
+    width: 120px;  
+    font-size: 16px; 
+    text-transform: uppercase; 
+}
+.logout:hover{
+    background: darkred;
+}
+.backbutton {
+    position: absolute;
+    bottom: 100px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background: red;
+    padding: 10px 20px;  
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    width: 120px; 
+    font-size: 16px; 
+    text-transform: uppercase; 
+}
+.backbutton:hover {
+background: darkred; 
 }
 
 @media (max-width: 768px) {

@@ -126,6 +126,7 @@
             <li><a href="#home">Dashboard</a></li>
             <li><a href="../admin/service-manage.php">Manage Services</a></li>
             <li><a href="../admin/technician-create.php">Add Technician</a></li>
+            <li><a href="../user/track-service.php">Track status</a></li>
             <li><a href="../admin/admin-feedback.php">Feedbacks</a></li>
         </ul>
         <button onclick="history.back()" class="backbutton" name="backbutton" >

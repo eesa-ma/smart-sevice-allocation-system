@@ -89,6 +89,13 @@ if(isset($_POST["submit"])) {
                     <td colspan="2"><center><input type="submit" value="Create account" id="submit" name="submit"></center></td>
                 </tr>
                 <tr>
+            <td colspan="2">
+                <center><button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button></center>
+            </td>
+            </tr>
+                <tr>
                     <td colspan="2">Have an account already? <a href="../user/user-signin.php">Login</a></td>
                 </tr>
             </table>

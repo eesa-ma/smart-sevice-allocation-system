@@ -15,6 +15,17 @@
             echo "<script>alert('Error Assigning Technician');</script>";
         }
     }
+
+    if (isset($_POST['delete_request'])) {
+        $request_id = $_POST['request_id'];
+        $deleteQuery = "DELETE FROM service_request WHERE Request_ID = '$request_id'";
+        
+        if (mysqli_query($conn, $deleteQuery)) {
+            echo "<script>alert('Request Deleted Successfully!'); window.location.href='service-manage.php';</script>";
+        } else {
+            echo "<script>alert('Error Deleting Request');</script>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -32,15 +43,15 @@
             color:white;
             background-color: #f3f3e0;
             background-image: url('/smart-sevice-allocation-system/public/images/all.png'); 
-            background-size: cover; /* Ensures the whole image is displayed without cropping */
-            background-position: center; /* Centers the image */
-            background-repeat: no-repeat; /* Prevents repetition */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             background-attachment: fixed;
         }
         .container {
             max-width: 900px;
             margin: auto;
-            background: #333333 ;
+            background: #333333;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -68,15 +79,40 @@
             border-radius: 5px;
             width: 100%;
         }
-        button {
+        button.update-btn {
             background: #FF0000;
             color: white;
             border: none;
             cursor: pointer;
         }
-        button:hover {
+        button.delete-btn {
+            background-color:red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button.update-btn:hover {
             background: darkred;
         }
+        button.delete-btn:hover {
+            background: darkred;
+        }
+        .action-column {
+            display: flex;
+            gap: 5px;
+        }
+        .backbutton {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.backbutton:hover{
+    background: darkred;
+}
     </style>
 </head>
 <body>
@@ -115,15 +151,24 @@
                                     while ($tech = mysqli_fetch_assoc($techResult)) {
                                         echo "<option value='{$tech['Techinician_ID']}'>{$tech['Name']}</option>";
                                     }
-
                     echo "          </select>
                         </td>
-                        <td><button type='submit' name='assign_technician'>Update</button></td>
+                        <td class='action-column'>
+                            <button type='submit' name='assign_technician' class='update-btn'>Update</button>
                             </form>
-                        </tr>";
+                            <form method='POST' action=''>
+                                <input type='hidden' name='request_id' value='{$row['Request_ID']}'>
+                                <button type='submit' name='delete_request' class='delete-btn'>Delete</button>
+                            </form>
+                        </td>
+                    </tr>";
                 }
             ?>
+            
         </table>
+        <center><button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button></center>
     </div>
 </body>
 </html>

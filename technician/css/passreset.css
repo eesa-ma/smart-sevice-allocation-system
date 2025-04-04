@@ -10,3 +10,15 @@ body {
     background-attachment: fixed;
     position: relative;
 }
+.backbutton {
+    width: 35%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.backbutton:hover{
+    background: darkred;
+}

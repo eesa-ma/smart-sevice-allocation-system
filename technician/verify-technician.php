@@ -35,6 +35,9 @@
     <link rel="stylesheet" href="../public/css/form.css">
 </head>
 <body>
+<button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button>
     <div class="div-container" style="background-color: white;">
         <i class="fa-solid fa-user-lock"></i>
         <p>Trouble with logging in?</p>

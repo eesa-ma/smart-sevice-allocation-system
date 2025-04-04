@@ -44,5 +44,19 @@ th {
     background-color: #f3f3e0;
     color: black;
 }
+.backbutton {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.backbutton:hover {
+    background: darkred;
+}
 
  

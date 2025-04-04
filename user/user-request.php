@@ -85,6 +85,21 @@
         button:hover {
             background: darkred;
         }
+        .backbutton {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.backbutton:hover {
+    background: darkred;
+}
+
     </style>
 </head>
 <body>
@@ -123,6 +138,9 @@
             <label for="mobile">Mobile Number:</label>
             <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number" required>
             <button type="submit" id="submit" name="submit">Submit Request</button>
+            <button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button>        
         </form>
     </div>
 </body>

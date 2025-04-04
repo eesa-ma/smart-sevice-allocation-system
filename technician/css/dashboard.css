@@ -108,12 +108,62 @@ body {
     left: 50%;
     transform: translateX(-50%);
     background: red;
-    padding: 10px;
+    padding: 10px 20px; 
     color: white;
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
+    border: none;
+    width: 120px;  
+    font-size: 16px; 
+    text-transform: uppercase; 
 }
 h2{
     color: white;
+}
+.backbutton {
+    position: absolute;
+    bottom: 100px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background: red;
+    padding: 10px 20px;  
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    width: 120px; 
+    font-size: 16px; 
+    text-transform: uppercase; 
+}
+.backbutton:hover {
+background: darkred; 
+}
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+}
+.sidebar h2 {
+    text-align: center;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+}
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+.sidebar ul li:hover {
+    background: #444;
 }

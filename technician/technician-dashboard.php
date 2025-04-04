@@ -13,10 +13,16 @@ session_start();
 <body>
     <div class="tech_dahboard">
         <div class="sidebar">
+            
             <h2>Technician Panel</h2>
-            <a href="#">Dashboard</a>
-            <a href="../technician/assignedtask.php">Assigned Tasks</a>
-            <a href="../technician/view-feedback.php">Feedbacks</a>
+            <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="../technician/assignedtask.php">Assigned Tasks</a></li>
+            <li><a href="../technician/view-feedback.php">Feedbacks</a></li>
+            </ul>
+            <button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button>
             <form action="../includes/logout.php" method="POST">
             <button class="logout" name="logout">Logout</button>
         </form>
