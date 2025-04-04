@@ -7,9 +7,10 @@ $query = "SELECT r.Request_ID, u.name AS customer_name,
           FROM service_request r
           JOIN user u ON r.User_ID = u.user_ID
           WHERE r.Techinician_ID = $technician_id 
-          AND r.Status != 'Completed'";
+          AND r.Status NOT IN ('Completed', 'Rejected')";
 $result = mysqli_query($conn, $query);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -114,6 +115,7 @@ $result = mysqli_query($conn, $query);
                             <select name="status" required>
                                 <option value="" disabled selected>Select </option>
                                 <option value="Accepted" <?php if ($row['Status'] == 'Accepted') echo 'selected'; ?>>Accepted</option>
+                                <option value="Rejected" <?php if ($row['Status'] == 'Rejected') echo 'selected'; ?>>Rejected</option>
                                 <option value="Completed" <?php if ($row['Status'] == 'Completed') echo 'selected'; ?>>Completed</option>
                             </select>
                     </td>
@@ -122,9 +124,6 @@ $result = mysqli_query($conn, $query);
                 </tr>
                 <?php } ?>
             </table>
-            <center><button onclick="history.back()" class="backbutton" name="backbutton" >
-        back
-        </button></center>
         </div>
     </div>
 </body>
