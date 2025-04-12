@@ -26,12 +26,17 @@
     <title>Admin Dashboard</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            background: #f3f3e0
-        }
+    font-family: 'nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: #f3f3e0;
+    background-image: url('/smart-sevice-allocation-system/public/images/admindash.png'); 
+    background-size: contain; /* Ensures the whole image is displayed without cropping */
+    background-position: right; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repetition */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+}
         .sidebar {
             width: 200px;
             height: 100vh;
@@ -121,6 +126,7 @@
             <li><a href="#home">Dashboard</a></li>
             <li><a href="../admin/service-manage.php">Manage Services</a></li>
             <li><a href="../admin/technician-create.php">Add Technician</a></li>
+            <li><a href="../admin/track-service.php">Track Service Status</a></li>
             <li><a href="../admin/admin-feedback.php">Feedbacks</a></li>
         </ul>
         <button onclick="history.back()" class="backbutton" name="backbutton" >

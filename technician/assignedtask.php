@@ -7,9 +7,10 @@ $query = "SELECT r.Request_ID, u.name AS customer_name,
           FROM service_request r
           JOIN user u ON r.User_ID = u.user_ID
           WHERE r.Techinician_ID = $technician_id 
-          AND r.Status != 'Completed'";
+          AND r.Status NOT IN ('Completed', 'Rejected')";
 $result = mysqli_query($conn, $query);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +23,13 @@ $result = mysqli_query($conn, $query);
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #f3f3e0;
+            background-image: url('/smart-sevice-allocation-system/public/images/all.png'); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
         }
         .container {
             max-width: 900px;
@@ -31,6 +38,8 @@ $result = mysqli_query($conn, $query);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #333333;
+            color:white;
         }
         h2 {
             text-align: center;
@@ -49,8 +58,8 @@ $result = mysqli_query($conn, $query);
             text-align: left;
         }
         th {
-            background-color: #007bff;
-            color: white;
+            background-color: #f3f3e0;
+            color: black;
         }
         select, button {
             padding: 10px;
@@ -59,14 +68,26 @@ $result = mysqli_query($conn, $query);
             width: 100%;
         }
         button {
-            background: #28a745;
+            background: red;
             color: white;
             border: none;
             cursor: pointer;
         }
         button:hover {
-            background: #218838;
+            background: darkred;
         }
+        .backbutton {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.backbutton:hover{
+    background: darkred;
+}
     </style>
 </head>
 <body>
@@ -94,6 +115,7 @@ $result = mysqli_query($conn, $query);
                             <select name="status" required>
                                 <option value="" disabled selected>Select </option>
                                 <option value="Accepted" <?php if ($row['Status'] == 'Accepted') echo 'selected'; ?>>Accepted</option>
+                                <option value="Rejected" <?php if ($row['Status'] == 'Rejected') echo 'selected'; ?>>Rejected</option>
                                 <option value="Completed" <?php if ($row['Status'] == 'Completed') echo 'selected'; ?>>Completed</option>
                             </select>
                     </td>
@@ -102,6 +124,9 @@ $result = mysqli_query($conn, $query);
                 </tr>
                 <?php } ?>
             </table>
+            <center><button onclick="history.back()" class="backbutton" name="backbutton">
+        back
+        </button></center>
         </div>
     </div>
 </body>

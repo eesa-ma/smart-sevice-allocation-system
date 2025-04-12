@@ -26,12 +26,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback</title>
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        form { width: 50%; margin: auto; border: 1px solid #ccc; padding: 20px; border-radius: 10px; }
+        body { font-family: Arial, sans-serif; padding: 20px;background-color:#f3f3e0;background-image: url('/smart-sevice-allocation-system/public/images/all.png'); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative; }
+        form { width: 50%; margin: auto; border: 1px solid #ccc; padding: 20px; border-radius: 10px;background-color:#333333;color:white; }
         label { font-weight: bold; display: block; margin-top: 10px; }
         select, textarea, button { width: 100%; padding: 10px; margin-top: 5px; }
-        button { background-color: #007bff; color: white; border: none; cursor: pointer; }
-        button:hover { background-color: #0056b3; }
+        button { background-color:red; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: darkred; }
+        .backbutton {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.backbutton:hover {
+    background: darkred;
+}
     </style>
     <script>
         function showServiceDetails() {
@@ -65,6 +84,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <label>Comments:</label>
     <textarea name="comments" required></textarea>
     <button type="submit">Submit Feedback</button>
+    <center><button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button></center>
 </form>
 </body>
 </html>

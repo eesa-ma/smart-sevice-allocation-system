@@ -1,8 +1,7 @@
 <?php
     session_start();
-    include("../includes/db.php"); 
-    $user_id = $_SESSION['userid']; 
-    $query = "SELECT Request_ID, description, status FROM service_request WHERE User_ID = $user_id";
+    include("../includes/db.php"); ; 
+    $query = "SELECT * FROM service_request";
     $result = mysqli_query($conn, $query);
 ?>
 
@@ -27,8 +26,8 @@
             <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
                     <td><?php echo ($row['Request_ID']); ?></td>
-                    <td><?php echo ($row['description']); ?></td>
-                    <td><?php echo ($row['status']); ?></td>
+                    <td><?php echo ($row['Description']); ?></td>
+                    <td><?php echo ($row['Status']); ?></td>
                 </tr>
             <?php } ?>
             

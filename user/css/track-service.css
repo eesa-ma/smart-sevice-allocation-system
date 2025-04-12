@@ -7,17 +7,23 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #f3f3e0;
+    background-image: url('/smart-sevice-allocation-system/public/images/all.png'); 
+            background-size: cover; /* Ensures the whole image is displayed without cropping */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents repetition */
+            background-attachment: fixed;
 
 }
 
 .container {
     max-width: 800px;
     margin: auto;
-    background: white;
+    background: #333333;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 h2 {
@@ -34,8 +40,22 @@ th, td {
     text-align: left;
 }
 th {
-    background-color: #28a745;
+    background-color: #f3f3e0;
+    color: black;
+}
+.backbutton {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
     color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.backbutton:hover {
+    background: darkred;
 }
 
  

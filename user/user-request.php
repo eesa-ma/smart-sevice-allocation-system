@@ -43,12 +43,19 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #f3f3e0;
+            background-image: url('/smart-sevice-allocation-system/public/images/all.png'); 
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
         }
         .container {
             max-width: 500px;
             margin: auto;
-            background: white;
+            background: #333333;
+            color:white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -69,15 +76,30 @@
         button {
             width: 100%;
             padding: 10px;
-            background: #28a745;
+            background: red;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
         button:hover {
-            background: #218838;
+            background: darkred;
         }
+        .backbutton {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.backbutton:hover {
+    background: darkred;
+}
+
     </style>
 </head>
 <body>
@@ -116,6 +138,9 @@
             <label for="mobile">Mobile Number:</label>
             <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number" required>
             <button type="submit" id="submit" name="submit">Submit Request</button>
+            <button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button>        
         </form>
     </div>
 </body>

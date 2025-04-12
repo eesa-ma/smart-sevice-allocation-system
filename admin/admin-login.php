@@ -34,31 +34,40 @@
     <link rel="stylesheet" href="../public/css/submit-button.css">
 </head>
 <body>
-    <header>
-    <h1><center> ADMIN LOGIN </center></h1>
-    </header>
-    <section class="log-sec">
-        <form action="admin-login.php" method="post">
-            <table>
-                <tr>
-                    <th colspan="2">ADMIN LOGIN</th>
-                </tr>
-                <tr>
-                    <td><label for="admin-mail">ADMIN ID:</label></td>
-                    <td><input type="number" name="admin-id" id="admin-id" required></td>
-                </tr>
-                <tr>
-                    <td><label for="admin-pass">Password:</label></td>
-                    <td><input type="password" name="admin-pass" id="admin-pass"  required></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><center><a href="../admin/verify-admin.php" >Forgotten your password?</a></center></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><center><input type="submit" value="LOGIN" id="submit" name="submit"></center></td>
-                </tr>
-            </table>   
-        </form>
-    </section>
+    <div class="container">
+        <h1><center>ADMIN LOGIN</center></h1>
+        <section class="log-sec">
+            <form action="admin-login.php" method="post">
+                <table>
+                    <tr>
+                        <th colspan="2">ADMIN LOGIN</th>
+                    </tr>
+                    <tr>
+                        <td><label for="admin-id">ADMIN ID:</label></td>
+                        <td><input type="number" name="admin-id" id="admin-id" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="admin-pass">Password:</label></td>
+                        <td><input type="password" name="admin-pass" id="admin-pass" required></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2"><center><a href="../admin/verify-admin.php">Forgotten your password?</a></center></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><center><input type="submit" value="LOGIN" id="submit" name="submit"></center></td>
+                    </tr>
+                    <tr>
+            <td colspan="2">
+                <center><button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button></center>
+            </td>
+            </tr>
+                </table>   
+            </form>
+        </section>
+    </div>
 </body>
+
 </html>

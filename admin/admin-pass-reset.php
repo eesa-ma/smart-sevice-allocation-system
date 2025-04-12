@@ -53,6 +53,13 @@
             <tr>
                 <td colspan="2"><center><input type="submit" id="submit" name="submit" value="Reset Password"></center></td>
             </tr>
+            <tr>
+            <td colspan="2">
+                <center><button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button></center>
+            </td>
+            </tr>
         </table>
     </form>
 </div>

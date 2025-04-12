@@ -3,8 +3,26 @@ body {
     justify-content: center;
     align-items: center;
     margin:  150px;
+    background-image: url('/smart-sevice-allocation-system/public/images/all.png'); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
 }
 
 .div-container {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
+}
+.backbutton {
+    width: 35%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.backbutton:hover{
+    background: darkred;
 }

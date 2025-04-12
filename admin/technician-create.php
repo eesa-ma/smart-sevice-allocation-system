@@ -31,11 +31,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Technician Management</title>
     <link rel="stylesheet" href="../public/css/global.css">
-    <link rel="stylesheet" href="../admin/css/admin-login.css">
+    <link rel="stylesheet" href="../admin/css/techcreate.css">
     <link rel="stylesheet" href="../public/css/form.css">
     <link rel="stylesheet" href="../public/css/submit-button.css">
 </head>
 <body>
+    <div class="container">
     <header>
     <h1><center> Register Technician </center></h1>
     </header>
@@ -85,8 +86,16 @@
                 <tr>
                     <td colspan="2"><center><input type="submit" value="CREATE ACCOUNT" id="submit" name="submit"></center></td>
                 </tr>
+                <tr>
+            <td colspan="2">
+                <center><button onclick="history.back()" class="backbutton" name="backbutton" >
+        back
+        </button></center>
+            </td>
+            </tr>
             </table>   
         </form>
     </section>
+</div>
 </body>
 </html>
