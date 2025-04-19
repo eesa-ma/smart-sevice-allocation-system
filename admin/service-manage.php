@@ -184,7 +184,7 @@ if (isset($_POST['delete_request'])) {
                 }
             ?>
         </table>
-        <center><button onclick="history.back()" class="backbutton" name="backbutton">
+        <center><button onclick="window.location.href='../admin/admin-dash.php'" class="backbutton" name="backbutton">
         back
         </button></center>
     </div>
