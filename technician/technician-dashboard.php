@@ -1,6 +1,20 @@
+
 <?php
 session_start();
+include("../includes/db.php"); 
+$technicianid = (int)$_SESSION["technicianid"];
+
+$assigned_count_query = "SELECT COUNT(*) AS total FROM service_request WHERE Techinician_ID = $technicianid";
+$assigned_count_result = mysqli_query($conn, $assigned_count_query);
+$assigned_count = mysqli_fetch_assoc($assigned_count_result);
+
+$completed_count_query = "SELECT COUNT(*) AS completed FROM service_request WHERE status = 'Completed' AND Techinician_ID = $technicianid";
+$completed_count_result = mysqli_query($conn, $completed_count_query);
+$completed_count = mysqli_fetch_assoc($completed_count_result);
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,11 +46,12 @@ session_start();
             <div class="card-container">
                 <div class="card">
                     <h5>Assigned Tasks</h5>
-                    <p>10</p>
+                    <p> <?php echo $assigned_count['total']; ?></p>
+                    
                 </div>
                 <div class="card">
                     <h5>Completed Tasks</h5>
-                    <p>7</p>
+                    <p><?php echo $completed_count['completed']; ?></p>
                 </div>
             </div>
         </div>
