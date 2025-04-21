@@ -19,7 +19,7 @@
                 $_SESSION["useremail"] = $row["Email"];
     
                 header("Location: user-dash.php");
-                //exit();
+                
             } else {
                 echo "<script>alert('Incorrect password!'); window.location.href='user-signin.php';</script>";
             }
