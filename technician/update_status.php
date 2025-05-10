@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<script>alert('Failed to update status.'); window.location.href='technician-dashboard.php';</script>";
     }
 }
-?>
+?> 
 <?php
 session_start();
 include '../includes/db.php';
