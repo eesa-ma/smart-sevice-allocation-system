@@ -39,8 +39,8 @@
         </form>
     </div>
     <div class="main-content">
-        <div class="topbar">
-            Welcome, <?php echo isset($_SESSION["username"]) ? $_SESSION["username"] : "User"; ?>
+        <div class="topbar"> <h1>
+            Welcome, <?php echo isset($_SESSION["username"]) ? $_SESSION["username"] : "User"; ?> </h1>
         </div>      
         <div class="cards">
             <div class="card">
